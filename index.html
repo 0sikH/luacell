@@ -10,7 +10,7 @@
     body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
     .slider-section { display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100vh; padding: 40px; }
     .left-img { flex: 1; padding: 20px; }
-    .left-img img { width: 100%; border-radius: 12px; }
+    .left-img .sub-swiper img { width: 100%; border-radius: 12px; }
     .right-info { flex: 1; padding: 20px; }
     .product { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
     .product h2 { font-size: 24px; margin-bottom: 8px; }
@@ -23,15 +23,31 @@
 </head>
 <body>
 
-  <div class="swiper">
+  <div class="swiper main-swiper">
     <div class="swiper-wrapper">
 
       <!-- Slide 1 -->
       <div class="swiper-slide">
         <div class="slider-section">
+
+          <!-- 좌측 이미지 슬라이드 -->
           <div class="left-img">
-            <img src="images/lifening.png" alt="Lifening Image">
+            <div class="swiper sub-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Image 1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Image 2">
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Image 3">
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- 우측 상품 정보 -->
           <div class="right-info">
             <div class="product">
               <h2>라이프닝 퍼스트 패키지</h2>
@@ -48,14 +64,15 @@
               <button class="btn">장바구니</button>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      <!-- Slide 2 (예시) -->
       <div class="swiper-slide">
         <div class="slider-section">
           <div class="left-img">
-            <img src="images/dermatology.png" alt="Dermatology Image">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="예시 이미지">
           </div>
           <div class="right-info">
             <div class="product">
@@ -67,7 +84,7 @@
             </div>
             <div class="product">
               <h2>더마톨로지 퍼스트 패키지</h2>
-              <p>[부스터] 수분 레이어링으로 건강한 피부를 위한 광채 세럼</p>
+              <p>차오르는 광채 효과를 선사하는 수분광채 세럼</p>
               <div class="price">119,000원</div>
               <div class="point">11,900P</div>
               <button class="btn">장바구니</button>
@@ -81,12 +98,17 @@
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
+    // 메인 슬라이더 (슬라이드 전체 전환)
+    new Swiper('.main-swiper', {
       loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      effect: 'slide',
+      autoplay: { delay: 8000 },
+    });
+
+    // 서브 슬라이더 (좌측 이미지 순환)
+    new Swiper('.sub-swiper', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      effect: 'fade',
     });
   </script>
 </body>
