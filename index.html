@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Slider</title>
+  <title>LUACELL Slider</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Pretendard', sans-serif; background: #fff; color: #333; }
 
     .swiper { width: 100%; height: 100vh; }
     .swiper-pagination-bullets { bottom: 20px !important; }
@@ -21,20 +21,19 @@
       align-items: center;
       padding: 40px;
       height: calc(100vh - 40px);
+      gap: 60px;
     }
 
     .left-img {
       flex: 1;
-      padding: 20px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .left-img img {
       width: 100%;
-      max-width: 500px;
-      height: auto;
+      max-width: 480px;
       aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 12px;
@@ -42,7 +41,6 @@
 
     .right-info {
       flex: 1;
-      padding: 20px;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -54,19 +52,31 @@
       text-align: center;
     }
 
-    .product img {
+    .product-img-wrap {
       width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       margin-bottom: 12px;
+    }
+
+    .product-img-wrap img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
     }
 
     .product h2 {
       font-size: 18px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .product p {
       font-size: 14px;
       color: #555;
+      min-height: 48px;
     }
 
     .price {
@@ -98,19 +108,23 @@
       <div class="swiper-slide">
         <div class="slider-section">
           <div class="left-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main Visual 1" />
           </div>
           <div class="right-info">
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product1">
+              <div class="product-img-wrap">
+                <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="썸네일 1" />
+              </div>
               <h2>버터 립 틴트 세미 매트</h2>
               <p>멜팅 버터 텍스처가 입술 위에 부드럽게 스며들어 세미 매트한 마무리감을 선사하는 립 틴트</p>
-              <div class="price">44,000원</div>
+              <div class="price">33,000원</div>
               <div class="point">3,300P</div>
               <button class="btn">장바구니</button>
             </div>
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Product2">
+              <div class="product-img-wrap">
+                <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="썸네일 2" />
+              </div>
               <h2>버터 립 틴트 벨벳 매트</h2>
               <p>클라우드 텍스처가 입술 위에 얇게 밀착하여 벨벳 매트한 마무리감을 선사하는 립 틴트</p>
               <div class="price">33,000원</div>
@@ -121,25 +135,29 @@
         </div>
       </div>
 
-      <!-- Slide 2 (예시용) -->
+      <!-- Slide 2 -->
       <div class="swiper-slide">
         <div class="slider-section">
           <div class="left-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Main 2">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Main Visual 2" />
           </div>
           <div class="right-info">
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product3">
-              <h2>더마 크림</h2>
-              <p>피부를 촉촉하게 케어하는 리프팅 크림</p>
+              <div class="product-img-wrap">
+                <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="썸네일 3" />
+              </div>
+              <h2>스파이크샷 앰플</h2>
+              <p>4세대 마이크로니들 기술로 피부 재생을 돕는 집중 앰플</p>
               <div class="price">79,000원</div>
               <div class="point">7,900P</div>
               <button class="btn">장바구니</button>
             </div>
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Product4">
-              <h2>퍼스트 부스터 세럼</h2>
-              <p>피부 결을 다듬어주는 광채 부스터</p>
+              <div class="product-img-wrap">
+                <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="썸네일 4" />
+              </div>
+              <h2>스파이크샷 패키지</h2>
+              <p>집중 케어를 위한 고기능성 앰플 2종 패키지</p>
               <div class="price">119,000원</div>
               <div class="point">11,900P</div>
               <button class="btn">장바구니</button>
@@ -149,8 +167,6 @@
       </div>
 
     </div>
-
-    <!-- 슬라이드 인디케이터 -->
     <div class="swiper-pagination"></div>
   </div>
 
@@ -158,13 +174,15 @@
   <script>
     new Swiper('.main-swiper', {
       loop: true,
-      autoplay: { delay: 5000 },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
     });
   </script>
-
 </body>
 </html>
