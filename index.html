@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Slider</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
+    .slider-section { display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100vh; padding: 40px; }
+    .left-img { flex: 1; padding: 20px; }
+    .left-img img { width: 100%; border-radius: 12px; }
+    .right-info { flex: 1; padding: 20px; }
+    .product { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+    .product h2 { font-size: 24px; margin-bottom: 8px; }
+    .product p { color: #666; font-size: 15px; }
+    .price { font-size: 18px; font-weight: bold; margin-top: 10px; }
+    .point { font-size: 14px; color: #0a8754; }
+    .btn { margin-top: 10px; padding: 8px 16px; border: 1px solid #aaa; background: #fff; cursor: pointer; }
+    .swiper { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="slider-section">
+          <div class="left-img">
+            <img src="images/lifening.png" alt="Lifening Image">
+          </div>
+          <div class="right-info">
+            <div class="product">
+              <h2>라이프닝 퍼스트 패키지</h2>
+              <p>라이프닝의 전 제품 5종을 2주간 경험해볼 수 있는 패키지</p>
+              <div class="price">437,000원</div>
+              <div class="point">43,700P</div>
+              <button class="btn">장바구니</button>
+            </div>
+            <div class="product">
+              <h2>라이프닝 딥톡 플러스</h2>
+              <p>가벼운 하루를 위한 비움 케어</p>
+              <div class="price">150,000원</div>
+              <div class="point">15,000P</div>
+              <button class="btn">장바구니</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="slider-section">
+          <div class="left-img">
+            <img src="images/dermatology.png" alt="Dermatology Image">
+          </div>
+          <div class="right-info">
+            <div class="product">
+              <h2>더마톨로지 크림</h2>
+              <p>빈틈 없이 탄력 넘치는 피부로 케어해주는 밀도 리프팅 크림</p>
+              <div class="price">79,000원</div>
+              <div class="point">7,900P</div>
+              <button class="btn">장바구니</button>
+            </div>
+            <div class="product">
+              <h2>더마톨로지 퍼스트 패키지</h2>
+              <p>[부스터] 수분 레이어링으로 건강한 피부를 위한 광채 세럼</p>
+              <div class="price">119,000원</div>
+              <div class="point">11,900P</div>
+              <button class="btn">장바구니</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      effect: 'slide',
+    });
+  </script>
+</body>
+</html>
