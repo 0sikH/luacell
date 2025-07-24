@@ -10,9 +10,10 @@
     body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
     .slider-section { display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100vh; padding: 40px; }
     .left-img { flex: 1; padding: 20px; }
-    .left-img .sub-swiper img { width: 100%; border-radius: 12px; }
+    .left-img img { width: 100%; border-radius: 12px; }
     .right-info { flex: 1; padding: 20px; }
     .product { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+    .product img { width: 100px; border-radius: 8px; margin-bottom: 10px; }
     .product h2 { font-size: 24px; margin-bottom: 8px; }
     .product p { color: #666; font-size: 15px; }
     .price { font-size: 18px; font-weight: bold; margin-top: 10px; }
@@ -30,58 +31,70 @@
       <div class="swiper-slide">
         <div class="slider-section">
 
-  <!-- 좌측 큰 이미지 -->
-  <div class="left-img">
-    <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main Image" style="width:100%; border-radius:12px;">
-  </div>
+          <!-- 좌측 큰 이미지 -->
+          <div class="left-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main Image">
+          </div>
 
-  <!-- 우측 상품 정보 (썸네일 포함) -->
-  <div class="right-info">
+          <!-- 우측 상품 정보 -->
+          <div class="right-info">
 
-    <!-- 상품 1 -->
-    <div class="product">
-      <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product 1 Thumbnail" style="width:100px; border-radius:8px; margin-bottom:10px;">
-      <h2>버터 립 틴트 세미 매트</h2>
-      <p>멜팅 버터 텍스처가 입술 위에 부드럽게 스며들어 세미 매트한 마무리감을 선사하는 립 틴트</p>
-      <div class="price">33,000원</div>
-      <div class="point">3,300P</div>
-      <button class="btn">장바구니</button>
-    </div>
+            <!-- 상품 1 -->
+            <div class="product">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product 1 Thumbnail">
+              <h2>버터 립 틴트 세미 매트</h2>
+              <p>멜팅 버터 텍스처가 입술 위에 부드럽게 스며들어 세미 매트한 마무리감을 선사하는 립 틴트</p>
+              <div class="price">33,000원</div>
+              <div class="point">3,300P</div>
+              <button class="btn">장바구니</button>
+            </div>
 
-    <!-- 상품 2 -->
-    <div class="product">
-      <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Product 2 Thumbnail" style="width:100px; border-radius:8px; margin-bottom:10px;">
-      <h2>버터 립 틴트 벨벳 매트</h2>
-      <p>클라우드 텍스처가 입술 위에 얇게 밀착하여 벨벳 매트한 마무리감을 선사하는 립 틴트</p>
-      <div class="price">36,000원</div>
-      <div class="point">3,300P</div>
-      <button class="btn">장바구니</button>
-    </div>
+            <!-- 상품 2 -->
+            <div class="product">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Product 2 Thumbnail">
+              <h2>버터 립 틴트 벨벳 매트</h2>
+              <p>클라우드 텍스처가 입술 위에 얇게 밀착하여 벨벳 매트한 마무리감을 선사하는 립 틴트</p>
+              <div class="price">36,000원</div>
+              <div class="point">3,300P</div>
+              <button class="btn">장바구니</button>
+            </div>
 
+          </div>
         </div>
       </div>
 
-      <!-- Slide 2 (예시) -->
+      <!-- Slide 2 -->
       <div class="swiper-slide">
         <div class="slider-section">
+
+          <!-- 좌측 큰 이미지 -->
           <div class="left-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="예시 이미지">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Main Image 2">
           </div>
+
+          <!-- 우측 상품 정보 -->
           <div class="right-info">
+
+            <!-- 상품 1 -->
             <div class="product">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Style2 Product 1 Thumbnail">
               <h2>더마톨로지 크림</h2>
               <p>빈틈 없이 탄력 넘치는 피부로 케어해주는 밀도 리프팅 크림</p>
               <div class="price">79,000원</div>
               <div class="point">7,900P</div>
               <button class="btn">장바구니</button>
             </div>
+
+            <!-- 상품 2 -->
             <div class="product">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Style2 Product 2 Thumbnail">
               <h2>더마톨로지 퍼스트 패키지</h2>
               <p>차오르는 광채 효과를 선사하는 수분광채 세럼</p>
               <div class="price">119,000원</div>
               <div class="point">11,900P</div>
               <button class="btn">장바구니</button>
             </div>
+
           </div>
         </div>
       </div>
@@ -91,18 +104,11 @@
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    // 메인 슬라이더 (슬라이드 전체 전환)
     new Swiper('.main-swiper', {
       loop: true,
       autoplay: { delay: 8000 },
     });
-
-    // 서브 슬라이더 (좌측 이미지 순환)
-    new Swiper('.sub-swiper', {
-      loop: true,
-      autoplay: { delay: 3000 },
-      effect: 'fade',
-    });
   </script>
+
 </body>
 </html>
