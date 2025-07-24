@@ -8,18 +8,85 @@
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Pretendard', sans-serif; margin: 0; background: #fff; color: #333; }
-    .slider-section { display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100vh; padding: 40px; }
-    .left-img { flex: 1; padding: 20px; }
-    .left-img img { width: 100%; border-radius: 12px; }
-    .right-info { flex: 1; padding: 20px; }
-    .product { margin-bottom: 40px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
-    .product img { width: 100px; border-radius: 8px; margin-bottom: 10px; }
-    .product h2 { font-size: 24px; margin-bottom: 8px; }
-    .product p { color: #666; font-size: 15px; }
-    .price { font-size: 18px; font-weight: bold; margin-top: 10px; }
-    .point { font-size: 14px; color: #0a8754; }
-    .btn { margin-top: 10px; padding: 8px 16px; border: 1px solid #aaa; background: #fff; cursor: pointer; }
+
     .swiper { width: 100%; height: 100vh; }
+    .swiper-pagination-bullets { bottom: 20px !important; }
+    .swiper-pagination-bullet { background: #999; opacity: 0.4; }
+    .swiper-pagination-bullet-active { background: #333; opacity: 1; }
+
+    .slider-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      height: calc(100vh - 40px);
+    }
+
+    .left-img {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-img img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .right-info {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .product {
+      width: 240px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .product h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .point {
+      font-size: 13px;
+      color: #0a8754;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: 1px solid #aaa;
+      background: #fff;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -30,83 +97,72 @@
       <!-- Slide 1 -->
       <div class="swiper-slide">
         <div class="slider-section">
-
-          <!-- 좌측 큰 이미지 -->
           <div class="left-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main Image">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Main">
           </div>
-
-          <!-- 우측 상품 정보 -->
           <div class="right-info">
-
-            <!-- 상품 1 -->
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product 1 Thumbnail">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product1">
               <h2>버터 립 틴트 세미 매트</h2>
               <p>멜팅 버터 텍스처가 입술 위에 부드럽게 스며들어 세미 매트한 마무리감을 선사하는 립 틴트</p>
               <div class="price">33,000원</div>
               <div class="point">3,300P</div>
               <button class="btn">장바구니</button>
             </div>
-
-            <!-- 상품 2 -->
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Product 2 Thumbnail">
+              <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Product2">
               <h2>버터 립 틴트 벨벳 매트</h2>
               <p>클라우드 텍스처가 입술 위에 얇게 밀착하여 벨벳 매트한 마무리감을 선사하는 립 틴트</p>
-              <div class="price">36,000원</div>
+              <div class="price">33,000원</div>
               <div class="point">3,300P</div>
               <button class="btn">장바구니</button>
             </div>
-
           </div>
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      <!-- Slide 2 (예시용) -->
       <div class="swiper-slide">
         <div class="slider-section">
-
-          <!-- 좌측 큰 이미지 -->
           <div class="left-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Main Image 2">
+            <img src="https://cdn.imweb.me/thumbnail/20250724/f877577c49472.png" alt="Main 2">
           </div>
-
-          <!-- 우측 상품 정보 -->
           <div class="right-info">
-
-            <!-- 상품 1 -->
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Style2 Product 1 Thumbnail">
-              <h2>더마톨로지 크림</h2>
-              <p>빈틈 없이 탄력 넘치는 피부로 케어해주는 밀도 리프팅 크림</p>
+              <img src="https://cdn.imweb.me/thumbnail/20250724/ea9bfe3668247.jpg" alt="Product3">
+              <h2>더마 크림</h2>
+              <p>피부를 촉촉하게 케어하는 리프팅 크림</p>
               <div class="price">79,000원</div>
               <div class="point">7,900P</div>
               <button class="btn">장바구니</button>
             </div>
-
-            <!-- 상품 2 -->
             <div class="product">
-              <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Style2 Product 2 Thumbnail">
-              <h2>더마톨로지 퍼스트 패키지</h2>
-              <p>차오르는 광채 효과를 선사하는 수분광채 세럼</p>
-              <div class="price">127,000원</div>
+              <img src="https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg" alt="Product4">
+              <h2>퍼스트 부스터 세럼</h2>
+              <p>피부 결을 다듬어주는 광채 부스터</p>
+              <div class="price">119,000원</div>
               <div class="point">11,900P</div>
               <button class="btn">장바구니</button>
             </div>
-
           </div>
         </div>
       </div>
 
     </div>
+
+    <!-- 슬라이드 인디케이터 -->
+    <div class="swiper-pagination"></div>
   </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     new Swiper('.main-swiper', {
       loop: true,
-      autoplay: { delay: 8000 },
+      autoplay: { delay: 6000 },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
     });
   </script>
 
