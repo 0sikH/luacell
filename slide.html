@@ -5,17 +5,31 @@
   <title>루아셀 슬라이드</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Pretendard', sans-serif; background: #000; overflow: hidden;}
-    .slide {
-      position: absolute;
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Pretendard', sans-serif;
+      background: #000;
+    }
+    .slide-wrapper {
+      position: relative;
       width: 100vw;
       height: 100vh;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transition: opacity 1s ease;
+      z-index: 0;
     }
     .slide.active {
       opacity: 1;
@@ -28,7 +42,6 @@
       background-size: cover;
       background-position: center;
       z-index: 0;
-      transition: opacity 1s ease;
     }
     .content {
       position: relative;
@@ -72,31 +85,33 @@
   </style>
 </head>
 <body>
-  <div class="slide active">
-    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
-    <div class="content">
-      <h2>루아셀 스파이크샷 앰플</h2>
-      <p>피부 리페어를 위한 집중 앰플</p>
-      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
-      <button class="btn">제품 보기</button>
+  <div class="slide-wrapper">
+    <div class="slide active">
+      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
+      <div class="content">
+        <h2>루아셀 스파이크샷 앰플</h2>
+        <p>피부 리페어를 위한 집중 앰플</p>
+        <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
+        <button class="btn">제품 보기</button>
+      </div>
     </div>
-  </div>
-  <div class="slide">
-    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
-    <div class="content">
-      <h2>루아셀 MF 엑소 크림</h2>
-      <p>엑소좀 고보습 크림</p>
-      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
-      <button class="btn">제품 보기</button>
+    <div class="slide">
+      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
+      <div class="content">
+        <h2>루아셀 MF 엑소 크림</h2>
+        <p>엑소좀 고보습 크림</p>
+        <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
+        <button class="btn">제품 보기</button>
+      </div>
     </div>
-  </div>
-  <div class="slide">
-    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
-    <div class="content">
-      <h2>루아셀 화이트 레이블 선크림</h2>
-      <p>자외선 차단 + 미백 케어</p>
-      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
-      <button class="btn">제품 보기</button>
+    <div class="slide">
+      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
+      <div class="content">
+        <h2>루아셀 화이트 레이블 선크림</h2>
+        <p>자외선 차단 + 미백 케어</p>
+        <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
+        <button class="btn">제품 보기</button>
+      </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
