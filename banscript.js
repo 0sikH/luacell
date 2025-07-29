@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide-item");
   const progress = document.querySelector(".progress-bar .progress");
   const dots = document.querySelectorAll(".dot");
+
   let current = 0;
 
-  // 배너 축소 애니메이션 (초기 100vh → 400px)
+  // 배너 축소 애니메이션 (100vh → 400px)
   setTimeout(() => {
     banner.style.height = "400px";
   }, 4000);
 
+  // 인디케이터 dot 활성화
   function updateIndicators(index) {
     dots.forEach(dot => dot.classList.remove("active"));
     if (dots[index]) {
@@ -17,11 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // 슬라이드 보여주기
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.remove("active");
       const text = slide.querySelector(".slide-text");
       const image = slide.querySelector("img");
+
+      // 초기화
       text.style.opacity = 0;
       text.style.transform = "translateY(20px)";
       image.style.opacity = 0;
@@ -33,13 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = active.querySelector(".slide-text");
     const image = active.querySelector("img");
 
+    // 순차 등장 애니메이션
     setTimeout(() => {
       text.style.opacity = 1;
       text.style.transform = "translateY(0)";
-      image.style.opacity = 1;
     }, 300);
+    setTimeout(() => {
+      image.style.opacity = 1;
+    }, 600);
 
-    // 프로그레스 바 초기화 후 재생
+    // 프로그레스 바 초기화 후 애니메이션
     progress.style.transition = "none";
     progress.style.width = "0%";
     setTimeout(() => {
@@ -47,12 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
       progress.style.width = "100%";
     }, 50);
 
-    // 인디케이터 점 상태 업데이트
     updateIndicators(index);
   }
 
+  // 초기 슬라이드 표시
   showSlide(current);
 
+  // 5초마다 자동 전환
   setInterval(() => {
     current = (current + 1) % slides.length;
     showSlide(current);
