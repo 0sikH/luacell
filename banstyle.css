@@ -56,9 +56,11 @@ body, html {
 
 /* 이미지 */
 .slide-image img {
-  max-width: 200px;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 /* 버튼 */
