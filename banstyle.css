@@ -101,3 +101,55 @@ body, html {
   background: #000;
   transition: width 5s linear;
 }
+.indicator-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.dots {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.dot .ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: scale(1.6);
+  opacity: 0;
+  transform-origin: center;
+}
+
+.dot.active .ring {
+  animation: ringProgress 5s linear forwards;
+}
+
+@keyframes ringProgress {
+  0% {
+    transform: rotate(0deg) scale(1.6);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.6);
+    opacity: 1;
+  }
+}
