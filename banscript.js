@@ -2,12 +2,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const banner = document.querySelector(".intro-banner");
   const slides = document.querySelectorAll(".slide-item");
   const progress = document.querySelector(".progress-bar .progress");
+  const dots = document.querySelectorAll(".dot");
   let current = 0;
 
   // 배너 축소 애니메이션 (초기 100vh → 400px)
   setTimeout(() => {
     banner.style.height = "400px";
   }, 4000);
+
+  function updateIndicators(index) {
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[index]) {
+      dots[index].classList.add("active");
+    }
+  }
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -38,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
       progress.style.transition = "width 5s linear";
       progress.style.width = "100%";
     }, 50);
+
+    // 인디케이터 점 상태 업데이트
+    updateIndicators(index);
   }
 
   showSlide(current);
