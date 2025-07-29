@@ -10,6 +10,7 @@ body, html {
 .intro-banner {
   width: 100%;
   height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
   background-color: #fff;
   position: relative;
@@ -34,6 +35,10 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
   opacity: 0;
   transition: opacity 1s ease;
 }
@@ -47,7 +52,7 @@ body, html {
 .slide-text {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -56,16 +61,18 @@ body, html {
 
 /* 이미지 */
 .slide-image img {
-  height: 400px;
+  max-height: 60vh;
+  max-width: 90%;
   width: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
 
 /* 버튼 */
 .banner-btn {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .banner-btn a {
