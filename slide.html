@@ -4,121 +4,136 @@
   <meta charset="UTF-8" />
   <title>루아셀 슬라이드</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Pretendard', sans-serif; background: #fff; overflow-x: hidden; }
-    .swiper { width: 100vw; height: 100vh; }
-    .slide-wrapper { display: flex; width: 100%; height: 100%; }
-    .left, .right {
-      width: 50%; height: 100%; display: flex; align-items: center; justify-content: center;
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Pretendard', sans-serif; background: #000; overflow: hidden;}
+    .slide {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
-    .left img {
-      width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease;
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
     }
-    .right {
-      flex-direction: column; background-color: #f5f8fc; position: relative;
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      transition: opacity 1s ease;
     }
-    .product-img {
-      width: 240px; transform: translateX(50px); opacity: 0;
+    .content {
+      position: relative;
+      z-index: 1;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 90%;
     }
-    .text {
-      text-align: center; margin-top: 24px; opacity: 0; transform: translateY(20px);
+    .content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      opacity: 0;
     }
-    .text h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-    .text p { font-size: 14px; color: #555; }
-    .swiper-pagination { bottom: 24px !important; }
+    .content p {
+      font-size: 1rem;
+      color: #444;
+      opacity: 0;
+    }
+    .product {
+      width: 200px;
+      margin: 30px 0 16px;
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    .btn {
+      padding: 10px 24px;
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+    }
   </style>
 </head>
 <body>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <div class="slide-wrapper">
-          <div class="left">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg" class="bg" />
-          </div>
-          <div class="right">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" class="product-img" />
-            <div class="text">
-              <h2>루아셀 스파이크샷 앰플</h2>
-              <p>피부 리페어를 위한 집중 앰플</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide">
-        <div class="slide-wrapper">
-          <div class="left">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg" class="bg" />
-          </div>
-          <div class="right">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" class="product-img" />
-            <div class="text">
-              <h2>루아셀 MF 엑소 크림</h2>
-              <p>엑소좀 고보습 크림</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide">
-        <div class="slide-wrapper">
-          <div class="left">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg" class="bg" />
-          </div>
-          <div class="right">
-            <img src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" class="product-img" />
-            <div class="text">
-              <h2>루아셀 화이트 레이블 선크림</h2>
-              <p>자외선 차단 + 미백 케어</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="slide active">
+    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
+    <div class="content">
+      <h2>루아셀 스파이크샷 앰플</h2>
+      <p>피부 리페어를 위한 집중 앰플</p>
+      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
+      <button class="btn">제품 보기</button>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <div class="slide">
+    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
+    <div class="content">
+      <h2>루아셀 MF 엑소 크림</h2>
+      <p>엑소좀 고보습 크림</p>
+      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
+      <button class="btn">제품 보기</button>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
+    <div class="content">
+      <h2>루아셀 화이트 레이블 선크림</h2>
+      <p>자외선 차단 + 미백 케어</p>
+      <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
+      <button class="btn">제품 보기</button>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      on: {
-        slideChangeTransitionStart() {
-          document.querySelectorAll('.bg').forEach(bg => bg.style.opacity = 0);
-        },
-        slideChangeTransitionEnd() {
-          const activeSlide = document.querySelector('.swiper-slide-active');
-          const bg = activeSlide.querySelector('.bg');
-          const product = activeSlide.querySelector('.product-img');
-          const text = activeSlide.querySelector('.text');
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
 
-          if (bg) bg.style.opacity = 1;
-          if (product && text) {
-            gsap.fromTo(product, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-            gsap.fromTo(text, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.2 });
-          }
-        }
-      }
-    });
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        const title = slide.querySelector('h2');
+        const subtitle = slide.querySelector('p');
+        const product = slide.querySelector('.product');
+        const btn = slide.querySelector('.btn');
+        gsap.set([title, subtitle, product, btn], { opacity: 0 });
+      });
 
-    // 첫 슬라이드 로딩 시 애니메이션 실행
-    window.addEventListener('load', () => {
-      swiper.emit('slideChangeTransitionEnd');
-    });
+      const active = slides[index];
+      active.classList.add('active');
+
+      const title = active.querySelector('h2');
+      const subtitle = active.querySelector('p');
+      const product = active.querySelector('.product');
+      const btn = active.querySelector('.btn');
+
+      gsap.to(title, { opacity: 1, duration: 0.6, delay: 0.3 });
+      gsap.to(subtitle, { opacity: 1, duration: 0.6, delay: 0.6 });
+      gsap.to(product, { opacity: 1, x: 0, duration: 1, delay: 0.9 });
+      gsap.to(btn, { opacity: 1, y: 0, duration: 0.6, delay: 1.2 });
+    }
+
+    showSlide(current);
+
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
   </script>
 </body>
 </html>
