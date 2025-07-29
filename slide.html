@@ -38,8 +38,9 @@
     .left {
       position: relative;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 60px;
     }
     .left .background {
       position: absolute;
@@ -48,18 +49,25 @@
       background-size: cover;
       background-position: center;
       transition: opacity 1s ease;
+      z-index: 0;
     }
     .left .label {
       position: relative;
       color: #fff;
       z-index: 2;
       text-align: left;
-      padding: 40px;
       font-weight: 700;
       font-size: 36px;
       line-height: 1.2;
       opacity: 0;
       transform: translateY(40px);
+    }
+    .left .best {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #ddd;
+      text-transform: uppercase;
     }
     .right {
       background-color: #f6f8fa;
@@ -105,7 +113,10 @@
     <div class="slide active">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
-        <div class="label">SPIKE<br/>SHOT<br/>AMPOULE</div>
+        <div class="label">
+          <div class="best">BEST 01</div>
+          SPIKE<br/>SHOT<br/>AMPOULE
+        </div>
       </div>
       <div class="right">
         <h2>루아셀 스파이크샷 앰플</h2>
@@ -117,7 +128,10 @@
     <div class="slide">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
-        <div class="label">MF<br/>EXO<br/>CREAM</div>
+        <div class="label">
+          <div class="best">BEST 02</div>
+          MF<br/>EXO<br/>CREAM
+        </div>
       </div>
       <div class="right">
         <h2>루아셀 MF 엑소 크림</h2>
@@ -129,7 +143,10 @@
     <div class="slide">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
-        <div class="label">ILLUMINATING<br/>WHITE<br/>SUNCREAM</div>
+        <div class="label">
+          <div class="best">BEST 03</div>
+          ILLUMINATING<br/>WHITE<br/>SUNCREAM
+        </div>
       </div>
       <div class="right">
         <h2>루아셀 화이트 레이블 선크림</h2>
