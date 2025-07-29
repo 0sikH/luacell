@@ -35,26 +35,25 @@
       width: 50%;
       height: 100%;
     }
-.left {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 0 60px;
-  overflow: hidden;
-}
-
-.left .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 1;
-  z-index: 0;
-}
+    .left {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 0 60px;
+      overflow: hidden;
+    }
+    .left .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
+      z-index: 0;
+    }
     .left .label {
       position: relative;
       color: #fff;
@@ -95,20 +94,23 @@
       opacity: 0;
     }
     .product {
-      width: 200px;
       height: 500px;
+      width: auto;
       margin: 30px 0 16px;
       transform: translateX(50px);
       opacity: 0;
     }
+    .slide:nth-child(2) .product {
+      height: 400px;
+    }
     .btn {
+      display: inline-block;
       padding: 10px 24px;
       background: #000;
       color: #fff;
-      border: none;
-      font-size: 14px;
       border-radius: 20px;
-      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
       opacity: 0;
       transform: translateY(10px);
     }
@@ -128,7 +130,7 @@
         <h2>루아셀 스파이크샷 앰플</h2>
         <p>피부 리페어를 위한 집중 앰플</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
-        <a class="btn" href="https://yourstore.com/제품링크" target="_blank">제품 보기</a>
+        <a class="btn" href="https://yourstore.com/spike-shot" target="_blank">제품 보기</a>
       </div>
     </div>
     <div class="slide">
@@ -143,7 +145,7 @@
         <h2>루아셀 MF 엑소 크림</h2>
         <p>엑소좀 고보습 크림</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
-        <a class="btn" href="https://yourstore.com/제품링크" target="_blank">제품 보기</a>
+        <a class="btn" href="https://yourstore.com/exo-cream" target="_blank">제품 보기</a>
       </div>
     </div>
     <div class="slide">
@@ -158,7 +160,7 @@
         <h2>루아셀 화이트 레이블 선크림</h2>
         <p>자외선 차단 + 미백 케어</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
-        <a class="btn" href="https://yourstore.com/제품링크" target="_blank">제품 보기</a>
+        <a class="btn" href="https://yourstore.com/suncream" target="_blank">제품 보기</a>
       </div>
     </div>
   </div>
