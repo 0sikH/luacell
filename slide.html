@@ -6,12 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
+      height: 100%;
       overflow: hidden;
       font-family: 'Pretendard', sans-serif;
-      background: #000;
     }
     .slide-wrapper {
       position: relative;
@@ -25,42 +24,44 @@
       width: 100%;
       height: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
       opacity: 0;
       transition: opacity 1s ease;
-      z-index: 0;
     }
     .slide.active {
       opacity: 1;
       z-index: 1;
     }
-    .background {
+    .left, .right {
+      width: 50%;
+      height: 100%;
+    }
+    .left {
+      position: relative;
+    }
+    .left .background {
       position: absolute;
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: center;
-      z-index: 0;
+      transition: opacity 1s ease;
     }
-    .content {
-      position: relative;
-      z-index: 1;
-      color: #000;
+    .right {
+      background-color: #f6f8fa;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      max-width: 90%;
+      transition: background-color 1s ease;
     }
-    .content h2 {
+    .right h2 {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
       opacity: 0;
     }
-    .content p {
+    .right p {
       font-size: 1rem;
       color: #444;
       opacity: 0;
@@ -87,8 +88,10 @@
 <body>
   <div class="slide-wrapper">
     <div class="slide active">
-      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
-      <div class="content">
+      <div class="left">
+        <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
+      </div>
+      <div class="right">
         <h2>루아셀 스파이크샷 앰플</h2>
         <p>피부 리페어를 위한 집중 앰플</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
@@ -96,8 +99,10 @@
       </div>
     </div>
     <div class="slide">
-      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
-      <div class="content">
+      <div class="left">
+        <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
+      </div>
+      <div class="right">
         <h2>루아셀 MF 엑소 크림</h2>
         <p>엑소좀 고보습 크림</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
@@ -105,8 +110,10 @@
       </div>
     </div>
     <div class="slide">
-      <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
-      <div class="content">
+      <div class="left">
+        <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
+      </div>
+      <div class="right">
         <h2>루아셀 화이트 레이블 선크림</h2>
         <p>자외선 차단 + 미백 케어</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
@@ -127,6 +134,8 @@
         const product = slide.querySelector('.product');
         const btn = slide.querySelector('.btn');
         gsap.set([title, subtitle, product, btn], { opacity: 0 });
+        gsap.set(product, { x: 50 });
+        gsap.set(btn, { y: 10 });
       });
 
       const active = slides[index];
