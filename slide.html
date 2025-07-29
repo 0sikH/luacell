@@ -37,6 +37,9 @@
     }
     .left {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .left .background {
       position: absolute;
@@ -45,6 +48,18 @@
       background-size: cover;
       background-position: center;
       transition: opacity 1s ease;
+    }
+    .left .label {
+      position: relative;
+      color: #fff;
+      z-index: 2;
+      text-align: left;
+      padding: 40px;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(40px);
     }
     .right {
       background-color: #f6f8fa;
@@ -90,6 +105,7 @@
     <div class="slide active">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/69da52d0cf7a8.jpg');"></div>
+        <div class="label">SPIKE<br/>SHOT<br/>AMPOULE</div>
       </div>
       <div class="right">
         <h2>루아셀 스파이크샷 앰플</h2>
@@ -101,6 +117,7 @@
     <div class="slide">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/67b32c6f96928.jpg');"></div>
+        <div class="label">MF<br/>EXO<br/>CREAM</div>
       </div>
       <div class="right">
         <h2>루아셀 MF 엑소 크림</h2>
@@ -112,6 +129,7 @@
     <div class="slide">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
+        <div class="label">ILLUMINATING<br/>WHITE<br/>SUNCREAM</div>
       </div>
       <div class="right">
         <h2>루아셀 화이트 레이블 선크림</h2>
@@ -133,9 +151,11 @@
         const subtitle = slide.querySelector('p');
         const product = slide.querySelector('.product');
         const btn = slide.querySelector('.btn');
-        gsap.set([title, subtitle, product, btn], { opacity: 0 });
+        const label = slide.querySelector('.label');
+        gsap.set([title, subtitle, product, btn, label], { opacity: 0 });
         gsap.set(product, { x: 50 });
         gsap.set(btn, { y: 10 });
+        gsap.set(label, { y: 40 });
       });
 
       const active = slides[index];
@@ -145,7 +165,9 @@
       const subtitle = active.querySelector('p');
       const product = active.querySelector('.product');
       const btn = active.querySelector('.btn');
+      const label = active.querySelector('.label');
 
+      gsap.to(label, { opacity: 1, y: 0, duration: 1, delay: 0.2 });
       gsap.to(title, { opacity: 1, duration: 0.6, delay: 0.3 });
       gsap.to(subtitle, { opacity: 1, duration: 0.6, delay: 0.6 });
       gsap.to(product, { opacity: 1, x: 0, duration: 1, delay: 0.9 });
