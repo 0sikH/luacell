@@ -1,35 +1,17 @@
+// about.js
+
 document.addEventListener("DOMContentLoaded", () => {
-  const title = document.querySelector(".about-title");
-  const text = document.querySelector(".about-text");
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
 
-  const reveal = () => {
-    gsap.to(title, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.2,
-      ease: "power3.out"
-    });
-
-    gsap.to(text, {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.5,
-      ease: "power3.out"
-    });
-  };
-
-  // IntersectionObserver로 스크롤 등장 시점 제어
-  const observer = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        reveal();
-        observer.disconnect(); // 한 번만 실행
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
       }
-    },
-    { threshold: 0.5 }
-  );
+    });
+  }, {
+    threshold: 0.2
+  });
 
-  observer.observe(document.querySelector(".about-section"));
+  revealElements.forEach(el => observer.observe(el));
 });
