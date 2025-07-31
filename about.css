@@ -42,3 +42,9 @@ body {
   opacity: 0;
   transform: translateY(60px);
 }
+
+.section-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
