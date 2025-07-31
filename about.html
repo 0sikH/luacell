@@ -2,120 +2,54 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>LUACELL ABOUT</title>
+  <title>ABOUT LUACELL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Pretendard', sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
-    section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .about-luacell {
-      padding: 100px 20px;
-      background: #f9f9f9;
-    }
-    .about-luacell h2, .about-luacell h3 {
-      text-align: center;
-    }
-    .tech-boxes {
-      max-width: 1000px;
-      margin: 80px auto 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      justify-content: center;
-    }
-    .tech-box {
-      flex: 1 1 280px;
-      background: #fff;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-  <section class="about-luacell">
-    <div style="max-width: 1080px; margin: 0 auto; text-align: center;">
-      <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 12px;">피부과학을 넘어<br>삶의 아름다움을 설계하다</h2>
-      <p style="font-size: 16px; color: #555; line-height: 1.7; max-width: 680px; margin: 0 auto;">
-        LUACELL은 ‘미백·재생·노화방지’의 해답을 찾기 위한<br>
-        기능성 스킨케어의 새로운 기준을 제시합니다.<br>
-        기술력, 임상, 디자인, 경험이 융합된 ‘메디컬 홈케어’를 통해<br>
-        전문가의 손길 없이도 집에서 피부 본연의 힘을 끌어올립니다.
-      </p>
-    </div>
-  </section>
-
-  <section class="about-luacell">
-    <div style="margin-top: 40px; background: #fff; padding: 60px 20px; text-align: center;">
-      <h3 style="font-size: 28px; font-weight: 600; margin-bottom: 12px;">
-        SCIENCE FOR SKIN. BEAUTY FOR LIFE.
-      </h3>
-      <p style="font-size: 14px; color: #777;">
-        기술로 아름다움을 설계하는 루아셀의 철학
-      </p>
-    </div>
-  </section>
-
-  <section class="about-luacell">
-    <div class="tech-boxes">
-      <div class="tech-box">
-        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 12px;">LIDLE SHOT™</h4>
-        <p style="font-size: 14px; color: #444;">미세침 기반 흡수 촉진 기술 (앰플/헤어앰플)</p>
-      </div>
-      <div class="tech-box">
-        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 12px;">PEP-FLEX15™</h4>
-        <p style="font-size: 14px; color: #444;">15종 복합 펩타이드 적용, 리프팅과 재생에 탁월</p>
-      </div>
-      <div class="tech-box">
-        <h4 style="font-size: 18px; font-weight: bold; margin-bottom: 12px;">SINGLE USE PACK</h4>
-        <p style="font-size: 14px; color: #444;">1회용 위생 포장으로 안전성과 신선도 유지</p>
+  <section class="about-section">
+    <!-- 섹션 1: 메인 비주얼 및 브랜드 철학 -->
+    <div class="about-visual" style="background-image: url('https://cdn.imweb.me/thumbnail/20250731/62f5056f09a31.png');">
+      <div class="about-text">
+        <h2>피부과학을 넘어<br>삶의 아름다움을 설계하다</h2>
+        <p>
+          LUACELL은 ‘미백·재생·노화방지’의 해답을 제시하는<br>
+          프리미엄 기능성 스킨케어 브랜드입니다.<br>
+          기술력, 임상, 디자인, 경험이 융합된 ‘메디컬 홈케어’를 통해<br>
+          피부 본연의 힘을 끌어올립니다.
+        </p>
       </div>
     </div>
-  </section>
 
-  <section class="about-luacell">
-    <div style="max-width: 960px; margin: 100px auto 0; text-align: center;">
-      <h3 style="font-size: 26px; font-weight: 600; margin-bottom: 20px;">K-Dermaceutical의 세계화</h3>
-      <ul style="font-size: 15px; color: #555; line-height: 1.8;">
-        <li>▪ 2025년 뉴욕 5번가 매장 런칭 — K-뷰티에서 K-더마로의 도약</li>
-        <li>▪ 미국, 일본, 중동 시장 진출 타진 중 (프리미엄 바이오 중심)</li>
-        <li>▪ SNS 바이럴 전략 + 피부과·약국 채널 복합 확장</li>
-      </ul>
+    <!-- 섹션 2: 브랜드 슬로건 + 분자 이미지 -->
+    <div class="about-core">
+      <div class="core-text">
+        <h3>SCIENCE FOR SKIN. BEAUTY FOR LIFE.</h3>
+        <p>기술로 아름다움을 설계하는 루아셀의 철학</p>
+      </div>
+      <div class="core-img">
+        <img src="https://cdn.imweb.me/thumbnail/20250731/6897e89901060.png" alt="분자 구조">
+      </div>
+    </div>
+
+    <!-- 섹션 3: 시그니처 기술 영역 -->
+    <div class="about-tech">
+      <div class="tech-block">
+        <img src="https://cdn.imweb.me/thumbnail/20250731/5d1658b7842fc.png" alt="성분 시각화">
+        <h4>LIDLE SHOT™</h4>
+        <p>미세침 기반 흡수 촉진 기술<br>피부 깊숙이 유효성분 전달</p>
+      </div>
+      <div class="tech-block">
+        <h4>PEP-FLEX15™</h4>
+        <p>15종 복합 펩타이드<br>리프팅 & 재생 + 콜라겐 유도</p>
+      </div>
+      <div class="tech-block">
+        <h4>SINGLE USE PACK</h4>
+        <p>1회용 위생 포장으로<br>신선함과 안정성 유지</p>
+      </div>
     </div>
   </section>
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const options = {
-      threshold: 0.2
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, options);
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+  <script src="about.js"></script>
 </body>
 </html>
