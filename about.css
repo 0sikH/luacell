@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  background: #fff;
+}
+
+.about-section {
+  padding: 120px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.about-left {
+  flex: 1;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.about-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(60px);
+}
