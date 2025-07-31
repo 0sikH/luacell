@@ -1,79 +1,57 @@
-/* about.css */
+/* about.css - 루아셀 ABOUT 페이지 전용 스타일 */
 
-body, html {
+body {
+  font-family: 'Pretendard', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Pretendard', sans-serif;
+  color: #222;
   background-color: #fff;
-  color: #111;
+  line-height: 1.6;
 }
 
-section.about-section {
-  padding: 100px 20px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.about-block {
+.about-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 60px;
-  margin-bottom: 120px;
+  padding: 100px 5%;
+  max-width: 1280px;
+  margin: 0 auto;
   flex-wrap: wrap;
 }
 
-.about-block.reverse {
-  flex-direction: row-reverse;
-}
-
 .about-text {
-  flex: 1 1 500px;
+  flex: 1;
+  min-width: 280px;
 }
 
-.about-text h2 {
-  font-size: 36px;
+.about-text h3 {
+  font-size: 28px;
   font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.about-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .about-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
 }
 
 .about-image {
-  flex: 1 1 500px;
+  flex: 1;
+  min-width: 280px;
   text-align: center;
 }
 
 .about-image img {
-  width: 100%;
-  max-width: 480px;
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Fade up animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s ease;
-}
-
-.fade-up.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media screen and (max-width: 768px) {
-  .about-block {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .about-text h2 {
-    font-size: 28px;
-  }
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
