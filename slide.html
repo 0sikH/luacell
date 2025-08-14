@@ -18,7 +18,7 @@
     .slide-wrapper {
       position: relative;
       width: 100vw;
-      height: 100dvh;
+      height: 100dvh;      /* iOS 주소창 변동 대응 */
       min-height: 100vh;
     }
 
@@ -26,7 +26,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      display: flex;
+      display: flex;        /* 기본: 좌우 2컬럼 */
       opacity: 0;
       transition: opacity 1s ease;
     }
@@ -78,6 +78,7 @@
       justify-content: center;
       text-align: center;
       transition: background-color 1s ease;
+      padding: 0;
     }
     .right h2 {
       font-size: 2rem;
@@ -112,103 +113,90 @@
       transform: translateY(10px);
     }
 
+    /* 각 슬라이드 오른쪽 배경색 */
     .right-bg1 .right { background-color: #9ea9bc; }
     .right-bg2 .right { background-color: #eff0db; }
     .right-bg3 .right { background-color: #cbe3ed; }
 
-    /* 모바일 스타일 */
+    /* =========================
+       모바일(<=768px)에서도 좌우 2컬럼 유지
+       요소는 강하게 축소
+       ========================= */
     @media (max-width: 768px) {
-      html, body { overflow: auto; }
+      html, body { overflow: hidden; }       /* 스크롤 없이 풀화면 */
 
-      .slide { 
-        position: relative;
-        display: block;
-        height: auto;
-        min-height: 100dvh;
-      }
+      .slide { display: flex; }              /* 그대로 가로 2컬럼 */
+      .left, .right { width: 50%; height: 100dvh; }
 
-      .left, .right {
-        width: 100%;
-        height: auto;
-      }
-
+      /* 왼쪽(배경/라벨) 레이아웃 압축 */
       .left {
-        padding: 0;
-        height: 45dvh;
-        min-height: 45vh;
-        display: flex;
+        padding: 0 12px 10vh 12px;           /* 좌우 패딩 축소, 하단 여백만 */
         align-items: flex-end;
-        justify-content: flex-start;
-      }
-      .left .background {
-        background-size: cover;
-        background-position: center;
       }
       .left .label {
-        font-size: clamp(18px, 5.2vw, 28px);
-        line-height: 1.1;
-        margin: 0 14px 18px;
+        font-size: clamp(16px, 4.6vw, 24px); /* 라벨 더 작게 */
+        line-height: 1.08;
+        margin-bottom: 4vh;
         opacity: 1;
         transform: translateY(0);
       }
-      .left .best {
-        font-size: 11px;
-        margin-bottom: 6px;
-      }
+      .left .best { font-size: 10px; margin-bottom: 6px; }
 
+      /* 오른쪽(제품/텍스트) 압축 */
       .right {
-        padding: 18px 14px calc(18px + env(safe-area-inset-bottom));
-        text-align: center;
-        justify-content: flex-start;
+        padding: 10px 10px;
+        justify-content: flex-end;           /* 제품·버튼을 하단 쪽으로 */
       }
       .right h2 {
-        font-size: clamp(16px, 4.2vw, 20px);
+        font-size: clamp(14px, 3.8vw, 18px);
         margin-bottom: 6px;
         opacity: 1;
       }
       .right p {
-        font-size: clamp(12px, 3.6vw, 14px);
+        font-size: clamp(11px, 3.4vw, 13px);
         opacity: 1;
       }
 
+      /* 제품 이미지: 칼럼 너비 기준으로 제한 */
       .product {
-        width: min(54vw, 240px);
-        height: auto !important;
-        margin: 12px auto;
+        width: 80%;                 /* 칼럼 폭의 80% */
+        max-width: 42vw;            /* 전체 화면 기준 최대 42vw */
+        height: auto !important;    /* PC용 고정 높이 해제 */
+        max-height: 32vh;           /* 세로 과도 차지 방지 */
+        margin: 10px auto 12px;
         transform: none;
         opacity: 1;
       }
       .slide:nth-child(2) .product { height: auto; }
 
+      /* 버튼도 컴팩트 */
       .btn {
-        padding: 8px 14px;
-        font-size: 12px;
+        padding: 8px 12px;
+        font-size: 11.5px;
         border-radius: 999px;
         transform: none;
         opacity: 1;
       }
     }
 
-    /* 초소형 화면 대응 */
+    /* 초소형(<=480px)에서 더 축소 */
     @media (max-width: 480px) {
-      .left { height: 40dvh; min-height: 40vh; }
+      .left { padding: 0 10px 9vh 10px; }
       .left .label {
-        font-size: clamp(16px, 4.6vw, 22px);
-        margin: 0 12px 14px;
+        font-size: clamp(14px, 4.2vw, 20px);
+        margin-bottom: 3.2vh;
       }
-      .right {
-        padding: 14px 12px calc(14px + env(safe-area-inset-bottom));
-      }
-      .right h2 { font-size: clamp(14px, 3.8vw, 18px); }
-      .right p { font-size: clamp(11px, 3.4vw, 13px); }
-      .product { width: min(50vw, 210px); margin: 10px auto; }
-      .btn { padding: 7px 12px; font-size: 11.5px; }
+      .right { padding: 8px; }
+      .right h2 { font-size: clamp(13px, 3.6vw, 16px); }
+      .right p  { font-size: clamp(10.5px, 3.2vw, 12.5px); }
+      .product  { max-width: 40vw; max-height: 28vh; }
+      .btn      { padding: 7px 10px; font-size: 11px; }
     }
 
-    /* 화면 높이가 낮은 기기 대응 */
+    /* 화면 높이가 낮은 기기(가로모드 포함) */
     @media (max-height: 700px) and (max-width: 768px) {
-      .left { height: 38dvh; min-height: 38vh; }
-      .product { width: min(48vw, 200px); }
+      .left { padding-bottom: 7vh; }
+      .product { max-height: 24vh; max-width: 38vw; }
     }
   </style>
 </head>
@@ -297,12 +285,12 @@
       const label = active.querySelector('.label');
 
       const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      const productX = isMobile ? 15 : 50;
+      const productX = isMobile ? 12 : 50;  // 모바일에선 이동량 더 줄임
 
       gsap.to(label,   { opacity: 1, y: 0, duration: 1,   delay: 0.2 });
       gsap.to(title,   { opacity: 1,           duration: 0.6, delay: 0.3 });
       gsap.to(subtitle,{ opacity: 1,           duration: 0.6, delay: 0.6 });
-      gsap.fromTo(product, { x: productX }, { opacity: 1, x: 0, duration: 1,   delay: 0.9 });
+      gsap.fromTo(product, { x: productX }, { opacity: 1, x: 0, duration: 1, delay: 0.9 });
       gsap.to(btn,     { opacity: 1, y: 0,    duration: 0.6, delay: 1.2 });
     }
 
