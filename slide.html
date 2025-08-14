@@ -12,29 +12,29 @@
       overflow: hidden;
       font-family: 'Pretendard', sans-serif;
     }
+
+    /* 전역 이미지 안전장치 */
+    img { max-width: 100%; height: auto; }
+
     .slide-wrapper {
       position: relative;
       width: 100vw;
-      height: 100vh;
+      height: 100dvh;   /* iOS 주소창 변동 대응 */
+      min-height: 100vh;/* 폴백 */
     }
+
     .slide {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       display: flex;
       opacity: 0;
       transition: opacity 1s ease;
     }
-    .slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
-    .left, .right {
-      width: 50%;
-      height: 100%;
-    }
+    .slide.active { opacity: 1; z-index: 1; }
+
+    .left, .right { width: 50%; height: 100%; }
+
     .left {
       position: relative;
       display: flex;
@@ -45,10 +45,7 @@
     }
     .left .background {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background-size: cover;
       background-position: center;
       opacity: 1;
@@ -73,6 +70,7 @@
       color: #ddd;
       text-transform: uppercase;
     }
+
     .right {
       background-color: #f6f8fa;
       display: flex;
@@ -81,6 +79,7 @@
       justify-content: center;
       text-align: center;
       transition: background-color 1s ease;
+      padding: 0 0; /* 모바일에서 별도 지정 */
     }
     .right h2 {
       font-size: 2rem;
@@ -93,6 +92,7 @@
       color: #444;
       opacity: 0;
     }
+
     .product {
       height: 500px;
       width: auto;
@@ -100,9 +100,8 @@
       transform: translateX(50px);
       opacity: 0;
     }
-    .slide:nth-child(2) .product {
-      height: 250px;
-    }
+    .slide:nth-child(2) .product { height: 250px; }
+
     .btn {
       display: inline-block;
       padding: 10px 24px;
@@ -116,14 +115,91 @@
     }
 
     /* 각 슬라이드 오른쪽 배경색 */
-    .right-bg1 .right {
-      background-color: #9ea9bc;
-    }
-    .right-bg2 .right {
-      background-color: #eff0db;
-    }
-    .right-bg3 .right {
-      background-color: #cbe3ed;
+    .right-bg1 .right { background-color: #9ea9bc; }
+    .right-bg2 .right { background-color: #eff0db; }
+    .right-bg3 .right { background-color: #cbe3ed; }
+
+    /* =========================
+       모바일 전용 스타일
+       ========================= */
+    @media (max-width: 768px) {
+      /* 모바일에선 스크롤 허용 */
+      html, body { overflow: auto; }
+
+      /* 슬라이드 레이아웃을 가로 → 세로 스택으로 */
+      .slide { 
+        position: relative;
+        display: block;      /* column 형태 */
+        height: auto;        /* 콘텐츠 높이 기반 */
+        min-height: 100dvh;  /* 화면 채우기 */
+      }
+
+      .left, .right {
+        width: 100%;
+        height: auto;
+      }
+
+      /* 상단 배경 블록: 화면 높이 절반 정도 */
+      .left {
+        padding: 0;
+        height: 55dvh;
+        min-height: 55vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .left .background {
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* 라벨 타이포 축소 + 여백 조정 */
+      .left .label {
+        font-size: clamp(24px, 6vw, 36px);
+        line-height: 1.1;
+        margin: 0 16px 24px;
+        opacity: 1;                  /* 첫 진입 시 보이도록 */
+        transform: translateY(0);
+      }
+      .left .best {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      /* 설명/제품 영역 패딩 및 타이포 축소 */
+      .right {
+        padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+        text-align: center;
+        justify-content: flex-start;
+      }
+      .right h2 {
+        font-size: clamp(18px, 4.8vw, 22px);
+        margin-bottom: 8px;
+        opacity: 1;
+      }
+      .right p {
+        font-size: clamp(14px, 4vw, 16px);
+        opacity: 1;
+      }
+
+      /* 제품 이미지: 폭 기준 축소, 좌우 이동 효과 제거 */
+      .product {
+        width: min(68vw, 320px);
+        height: auto !important;     /* PC용 고정 높이 무력화 */
+        margin: 16px auto;
+        transform: none;
+        opacity: 1;
+      }
+      .slide:nth-child(2) .product { height: auto; } /* 보강 */
+
+      /* 버튼도 컴팩트하게 */
+      .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        border-radius: 999px;
+        transform: none;
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -183,18 +259,23 @@
     const slides = document.querySelectorAll('.slide');
     let current = 0;
 
+    function resetSlide(slideEl) {
+      const title = slideEl.querySelector('h2');
+      const subtitle = slideEl.querySelector('p');
+      const product = slideEl.querySelector('.product');
+      const btn = slideEl.querySelector('.btn');
+      const label = slideEl.querySelector('.label');
+
+      gsap.set([title, subtitle, product, btn, label], { opacity: 0 });
+      gsap.set(product, { x: 50 });
+      gsap.set(btn, { y: 10 });
+      gsap.set(label, { y: 40 });
+    }
+
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.remove('active');
-        const title = slide.querySelector('h2');
-        const subtitle = slide.querySelector('p');
-        const product = slide.querySelector('.product');
-        const btn = slide.querySelector('.btn');
-        const label = slide.querySelector('.label');
-        gsap.set([title, subtitle, product, btn, label], { opacity: 0 });
-        gsap.set(product, { x: 50 });
-        gsap.set(btn, { y: 10 });
-        gsap.set(label, { y: 40 });
+        resetSlide(slide);
       });
 
       const active = slides[index];
@@ -206,11 +287,15 @@
       const btn = active.querySelector('.btn');
       const label = active.querySelector('.label');
 
-      gsap.to(label, { opacity: 1, y: 0, duration: 1, delay: 0.2 });
-      gsap.to(title, { opacity: 1, duration: 0.6, delay: 0.3 });
-      gsap.to(subtitle, { opacity: 1, duration: 0.6, delay: 0.6 });
-      gsap.to(product, { opacity: 1, x: 0, duration: 1, delay: 0.9 });
-      gsap.to(btn, { opacity: 1, y: 0, duration: 0.6, delay: 1.2 });
+      // 모바일에서는 애니메이션 강도를 살짝 낮춤 (선택적)
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const productX = isMobile ? 15 : 50;
+
+      gsap.to(label,   { opacity: 1, y: 0, duration: 1,   delay: 0.2 });
+      gsap.to(title,   { opacity: 1,           duration: 0.6, delay: 0.3 });
+      gsap.to(subtitle,{ opacity: 1,           duration: 0.6, delay: 0.6 });
+      gsap.fromTo(product, { x: productX }, { opacity: 1, x: 0, duration: 1,   delay: 0.9 });
+      gsap.to(btn,     { opacity: 1, y: 0,    duration: 0.6, delay: 1.2 });
     }
 
     showSlide(current);
@@ -219,6 +304,11 @@
       current = (current + 1) % slides.length;
       showSlide(current);
     }, 5000);
+
+    // 회전 시 레이아웃 / 애니메이션 보정
+    window.addEventListener('orientationchange', () => {
+      setTimeout(() => showSlide(current), 300);
+    });
   </script>
 </body>
 </html>
