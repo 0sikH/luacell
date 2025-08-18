@@ -4,172 +4,11 @@
   <meta charset="UTF-8" />
   <title>루아셀 슬라이드</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Pretendard', sans-serif;
-    }
-
-    img { max-width: 100%; height: auto; }
-
-    .slide-wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100dvh;
-      min-height: 100vh;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    .slide.active { opacity: 1; z-index: 1; }
-
-    .left, .right { width: 50%; height: 100%; }
-
-    .left {
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      padding: 0 60px;
-      overflow: hidden;
-    }
-    .left .background {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-    .left .label {
-      position: relative;
-      color: #fff;
-      z-index: 2;
-      text-align: left;
-      font-weight: 700;
-      font-size: 52px;
-      line-height: 1.1;
-      opacity: 0;
-      transform: translateY(40px);
-      margin-bottom: 12vh;
-    }
-    .left .best {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 16px;
-      color: #ddd;
-      text-transform: uppercase;
-    }
-
-    .right {
-      background-color: #f6f8fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: background-color 1s ease;
-    }
-    .right h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      opacity: 0;
-    }
-    .right p {
-      font-size: 1rem;
-      color: #444;
-      opacity: 0;
-    }
-
-    .product {
-      height: 500px;
-      width: auto;
-      margin: 30px 0 16px;
-      transform: translateX(50px);
-      opacity: 0;
-    }
-    .slide:nth-child(2) .product { height: 250px; }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 24px;
-      background: #000;
-      color: #fff;
-      border-radius: 20px;
-      font-size: 14px;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    .right-bg1 .right { background-color: #9ea9bc; }
-    .right-bg2 .right { background-color: #eff0db; }
-    .right-bg3 .right { background-color: #cbe3ed; }
-
-    /* 모바일 1:1 비율 */
-    @media (max-width: 768px) {
-      html, body { overflow: hidden; }
-
-      .slide {
-        flex-direction: row;
-      }
-
-      .left, .right {
-        width: 50%;
-        height: 100%;
-      }
-
-      /* 내부 여백 및 폰트 축소 */
-      .left { padding: 0 12px 4vh 12px; }
-      .left .label {
-        font-size: clamp(16px, 4vw, 22px);
-        margin-bottom: 3vh;
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .left .best { font-size: 11px; margin-bottom: 5px; }
-
-      .right {
-        padding: 10px;
-      }
-      .right h2 {
-        font-size: clamp(14px, 3.5vw, 18px);
-        opacity: 1;
-      }
-      .right p {
-        font-size: clamp(12px, 3vw, 14px);
-        opacity: 1;
-      }
-
-      .product {
-        width: 80%;
-        max-width: 38vw;     /* 좌우 각각 폭의 비율 맞춤 */
-        height: auto !important;
-        max-height: 30vh;    /* 너무 길어지지 않게 */
-        transform: none;
-        opacity: 1;
-      }
-
-      .btn {
-        padding: 8px 12px;
-        font-size: 12px;
-        transform: none;
-        opacity: 1;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="slide-wrapper">
+    <!-- Slide 1 -->
     <div class="slide active right-bg1">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250724/496fd553f1189.jpg');"></div>
@@ -182,10 +21,11 @@
         <h2>루아셀 스파이크샷 앰플</h2>
         <p>피부 리페어를 위한 집중 앰플</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/c203b1b4a0700.png" alt="앰플" />
-        <a class="btn" href="https://yourstore.com/spike-shot" target="_blank">제품 보기</a>
+        <a class="btn" href="#">제품 보기</a>
       </div>
     </div>
 
+    <!-- Slide 2 -->
     <div class="slide right-bg2">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250731/70869991052c4.jpg');"></div>
@@ -198,10 +38,11 @@
         <h2>루아셀 MF 엑소 크림</h2>
         <p>엑소좀 고보습 크림</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/fe6129c3be9c9.png" alt="크림" />
-        <a class="btn" href="https://yourstore.com/exo-cream" target="_blank">제품 보기</a>
+        <a class="btn" href="#">제품 보기</a>
       </div>
     </div>
 
+    <!-- Slide 3 -->
     <div class="slide right-bg3">
       <div class="left">
         <div class="background" style="background-image: url('https://cdn.imweb.me/thumbnail/20250729/f696301c14ced.jpg');"></div>
@@ -214,60 +55,12 @@
         <h2>루아셀 화이트 레이블 선크림</h2>
         <p>자외선 차단 + 미백 케어</p>
         <img class="product" src="https://cdn.imweb.me/thumbnail/20250729/84865074012d6.png" alt="선크림" />
-        <a class="btn" href="https://yourstore.com/suncream" target="_blank">제품 보기</a>
+        <a class="btn" href="#">제품 보기</a>
       </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-
-    function resetSlide(slideEl) {
-      const title = slideEl.querySelector('h2');
-      const subtitle = slideEl.querySelector('p');
-      const product = slideEl.querySelector('.product');
-      const btn = slideEl.querySelector('.btn');
-      const label = slideEl.querySelector('.label');
-
-      gsap.set([title, subtitle, product, btn, label], { opacity: 0 });
-      gsap.set(product, { x: 50 });
-      gsap.set(btn, { y: 10 });
-      gsap.set(label, { y: 40 });
-    }
-
-    function showSlide(index) {
-      slides.forEach(slide => {
-        slide.classList.remove('active');
-        resetSlide(slide);
-      });
-
-      const active = slides[index];
-      active.classList.add('active');
-
-      const title = active.querySelector('h2');
-      const subtitle = active.querySelector('p');
-      const product = active.querySelector('.product');
-      const btn = active.querySelector('.btn');
-      const label = active.querySelector('.label');
-
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      const productX = isMobile ? 12 : 50;
-
-      gsap.to(label,   { opacity: 1, y: 0, duration: 1,   delay: 0.2 });
-      gsap.to(title,   { opacity: 1,           duration: 0.6, delay: 0.3 });
-      gsap.to(subtitle,{ opacity: 1,           duration: 0.6, delay: 0.6 });
-      gsap.fromTo(product, { x: productX }, { opacity: 1, x: 0, duration: 1, delay: 0.9 });
-      gsap.to(btn,     { opacity: 1, y: 0,    duration: 0.6, delay: 1.2 });
-    }
-
-    showSlide(current);
-
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }, 5000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
