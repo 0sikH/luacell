@@ -1,3 +1,5 @@
+/* slide.css – 루아셀 슬라이드 전용 스타일 */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -101,7 +103,6 @@ img {
   transform: translateX(50px);
   opacity: 0;
 }
-
 .slide:nth-child(2) .product {
   height: 400px;
 }
@@ -121,3 +122,74 @@ img {
 .right-bg1 .right { background-color: #9ea9bc; }
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
+
+/* 모바일 최적화 (1:1 정사각형 유지 및 크기 조정) */
+@media (max-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
+
+  .slide-wrapper {
+    height: 100vw;
+  }
+
+  .slide {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left, .right {
+    width: 50%;
+    height: 100%;
+  }
+
+  .left {
+    padding: 0 12px 4vh 12px;
+  }
+
+  .left .label {
+    font-size: clamp(16px, 4vw, 22px);
+    margin-bottom: 3vh;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .left .best {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .right {
+    padding: 10px;
+  }
+
+  .right h2 {
+    font-size: clamp(14px, 3.5vw, 18px);
+    opacity: 1;
+  }
+
+  .right p {
+    font-size: clamp(12px, 3vw, 14px);
+    opacity: 1;
+  }
+
+  .product {
+    width: auto;
+    height: auto !important;
+    max-width: 72%;
+    max-height: 28vh;
+    transform: none;
+    opacity: 1;
+  }
+
+  .slide:nth-child(2) .product {
+    max-height: 24vh;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    transform: none;
+    opacity: 1;
+  }
+}
