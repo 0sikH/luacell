@@ -1,5 +1,3 @@
-/* slide.css – 루아셀 슬라이드 전용 스타일 */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -103,6 +101,7 @@ img {
   transform: translateX(50px);
   opacity: 0;
 }
+
 .slide:nth-child(2) .product {
   height: 400px;
 }
@@ -119,24 +118,34 @@ img {
   transform: translateY(10px);
 }
 
-.right-bg1 .right { background-color: #9ea9bc; }
-.right-bg2 .right { background-color: #eff0db; }
-.right-bg3 .right { background-color: #cbe3ed; }
+.right-bg1 .right {
+  background-color: #9ea9bc;
+}
+.right-bg2 .right {
+  background-color: #eff0db;
+}
+.right-bg3 .right {
+  background-color: #cbe3ed;
+}
 
-/* 모바일 최적화 (1:1 정사각형 유지 및 크기 조정) */
+/* 모바일: 1:1 비율 유지 */
 @media (max-width: 768px) {
   html, body {
     overflow: hidden;
   }
 
   .slide-wrapper {
-    height: 100vw;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-height: 100vh;
   }
 
   .slide {
     flex-direction: row;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .left, .right {
@@ -145,7 +154,7 @@ img {
   }
 
   .left {
-    padding: 0 12px 4vh 12px;
+    padding: 0 12px;
   }
 
   .left .label {
@@ -176,14 +185,13 @@ img {
   .product {
     width: auto;
     height: auto !important;
-    max-width: 72%;
-    max-height: 28vh;
+    max-height: 24vh;
     transform: none;
     opacity: 1;
   }
 
   .slide:nth-child(2) .product {
-    max-height: 24vh;
+    max-height: 20vh;
   }
 
   .btn {
