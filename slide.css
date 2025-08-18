@@ -1,20 +1,34 @@
-html, body {
+/* ------------------------------
+  Global Reset & Base
+------------------------------ */
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
   font-family: 'Pretendard', sans-serif;
+  background-color: #fff;
+  color: #222;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
+/* ------------------------------
+  Slide Wrapper
+------------------------------ */
 .slide-wrapper {
   position: relative;
   width: 100vw;
-  height: 100dvh;
+  height: 100vh;
   min-height: 100vh;
 }
 
@@ -28,11 +42,15 @@ img {
   opacity: 0;
   transition: opacity 1s ease;
 }
+
 .slide.active {
   opacity: 1;
   z-index: 1;
 }
 
+/* ------------------------------
+  Left / Right
+------------------------------ */
 .left, .right {
   width: 50%;
   height: 100%;
@@ -46,6 +64,7 @@ img {
   padding: 0 60px;
   overflow: hidden;
 }
+
 .left .background {
   position: absolute;
   inset: 0;
@@ -53,6 +72,7 @@ img {
   background-position: center;
   z-index: 0;
 }
+
 .left .label {
   position: relative;
   color: #fff;
@@ -65,6 +85,7 @@ img {
   transform: translateY(40px);
   margin-bottom: 12vh;
 }
+
 .left .best {
   font-size: 16px;
   font-weight: 500;
@@ -73,6 +94,9 @@ img {
   text-transform: uppercase;
 }
 
+/* ------------------------------
+  Right 영역 (텍스트 + 제품)
+------------------------------ */
 .right {
   background-color: #f6f8fa;
   display: flex;
@@ -82,12 +106,14 @@ img {
   text-align: center;
   transition: background-color 1s ease;
 }
+
 .right h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   opacity: 0;
 }
+
 .right p {
   font-size: 1rem;
   color: #444;
@@ -118,26 +144,20 @@ img {
   transform: translateY(10px);
 }
 
-.right-bg1 .right {
-  background-color: #9ea9bc;
-}
-.right-bg2 .right {
-  background-color: #eff0db;
-}
-.right-bg3 .right {
-  background-color: #cbe3ed;
-}
+/* ------------------------------
+  Right Background Colors
+------------------------------ */
+.right-bg1 .right { background-color: #9ea9bc; }
+.right-bg2 .right { background-color: #eff0db; }
+.right-bg3 .right { background-color: #cbe3ed; }
 
-/* 모바일: 1:1 비율 유지 */
+/* ------------------------------
+  Mobile (1:1 비율 유지)
+------------------------------ */
 @media (max-width: 768px) {
-  html, body {
-    overflow: hidden;
-  }
-
   .slide-wrapper {
     aspect-ratio: 1 / 1;
     height: auto;
-    max-height: 100vh;
   }
 
   .slide {
@@ -163,6 +183,7 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+
   .left .best {
     font-size: 11px;
     margin-bottom: 5px;
@@ -185,13 +206,14 @@ img {
   .product {
     width: auto;
     height: auto !important;
-    max-height: 24vh;
+    max-width: 80%;
+    max-height: 30vh;
     transform: none;
     opacity: 1;
   }
 
   .slide:nth-child(2) .product {
-    max-height: 20vh;
+    max-height: 26vh;
   }
 
   .btn {
