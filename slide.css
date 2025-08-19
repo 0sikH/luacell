@@ -110,7 +110,7 @@ img {
 }
 .slide:nth-child(2) .product {
   height: auto;
-  max-height: 320px;
+  max-height: 250px;
 }
 
 /* 버튼 */
