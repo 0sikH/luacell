@@ -29,9 +29,8 @@ body {
 
 .review-list {
   display: flex;
-  gap: 32px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 32px;
 }
 
 .review-card {
@@ -39,7 +38,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: none;
 }
 
 .review-card img {
@@ -85,7 +83,7 @@ body {
   padding-top: 0;
   border-top: none;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -129,45 +127,38 @@ body {
   margin-top: 4px;
 }
 
-
-/* ---------- 모바일 ---------- */
+/* ------- ✅ 모바일 최적화 수정 ------- */
 @media (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
-
   .review-list {
+    display: flex;
     flex-direction: column;
-    gap: 24px;
+    flex-wrap: nowrap !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
   }
 
   .review-card {
-    width: 100%;
+    width: 100% !important;
+    flex: none !important;
+    margin-bottom: 32px;
+    scroll-snap-align: none !important;
   }
 
   .review-card img {
     height: 220px;
   }
 
-  .review-title {
-    font-size: 16px;
+  .related-product {
+    flex-direction: row;
+    align-items: center;
   }
 
-  .review-content {
+  .related-product .info {
     font-size: 13px;
   }
 
-  .related-product {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
   .related-product img {
-    width: 42px;
-    height: 42px;
-  }
-
-  .cart-icon {
-    transform: scale(0.6);
+    width: 40px;
+    height: 40px;
   }
 }
