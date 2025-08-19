@@ -133,18 +133,17 @@ img {
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
 
-/* --------- 모바일 설정 --------- */
 @media (max-width: 768px) {
   html, body {
-    overflow: hidden;
     margin: 0;
     padding: 0;
-    height: 100vh; /* 추가 */
+    height: 100vh;
+    overflow: hidden;
   }
 
   .slide-wrapper {
     width: 100vw;
-    height: 100vh; /* 정비율 맞춤 */
+    height: 100vh; /* 뷰포트에 꽉 차게 */
     overflow: hidden;
   }
 
@@ -199,16 +198,15 @@ img {
 
   .product {
     max-width: 70%;
-    max-height: 50%;
+    max-height: 40vh;
     height: auto !important;
-    width: auto;
     transform: none;
     opacity: 1;
     margin: 1rem auto 0.5rem;
   }
 
   .slide:nth-child(2) .product {
-    max-height: 65%;
+    max-height: 35vh;
   }
 
   .btn {
