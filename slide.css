@@ -204,9 +204,22 @@ img {
     margin: 0 0 0.5rem;
   }
 
-  .product {
-    max-width: 65%;
-    height: auto;
+  /* 슬라이드별 이미지 조절 */
+  .slide:nth-child(1) .product {
+    max-width: 62%;
+    max-height: 48%;
+    margin: 0.4rem auto 0.5rem;
+  }
+
+  .slide:nth-child(2) .product {
+    max-width: 68%;
+    max-height: 55%;
+    margin: 0.4rem auto 0.5rem;
+  }
+
+  .slide:nth-child(3) .product {
+    max-width: 62%;
+    max-height: 50%;
     margin: 0.4rem auto 0.5rem;
   }
 
