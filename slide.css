@@ -102,14 +102,14 @@ img {
 
 /* 제품 이미지 */
 .product {
-  height: 500px;
+  height: 420px;
   width: auto;
   margin: 30px 0 16px;
-  transform: translateX(50px);
+  transform: translateX(40px);
   opacity: 0;
 }
 .slide:nth-child(2) .product {
-  height: 400px;
+  height: 360px;
 }
 
 /* 버튼 */
@@ -126,15 +126,9 @@ img {
 }
 
 /* 배경색 지정 */
-.right-bg1 .right {
-  background-color: #9ea9bc;
-}
-.right-bg2 .right {
-  background-color: #eff0db;
-}
-.right-bg3 .right {
-  background-color: #cbe3ed;
-}
+.right-bg1 .right { background-color: #9ea9bc; }
+.right-bg2 .right { background-color: #eff0db; }
+.right-bg3 .right { background-color: #cbe3ed; }
 
 /* 모바일 설정 */
 @media (max-width: 768px) {
@@ -146,7 +140,7 @@ img {
 
   .slide-wrapper {
     width: 100vw;
-    height: 100vw; /* 1:1 정사각형 비율 유지 */
+    height: 100vw; /* 1:1 정사각형 유지 */
   }
 
   .slide {
@@ -191,7 +185,7 @@ img {
   }
 
   .product {
-    max-width: 80%;
+    max-width: 70%;
     max-height: 80%;
     height: auto !important;
     width: auto;
@@ -200,7 +194,7 @@ img {
   }
 
   .slide:nth-child(2) .product {
-    max-height: 70%;
+    max-height: 65%;
   }
 
   .btn {
