@@ -1,18 +1,21 @@
-// about.js
-
+// Scroll 모션용 페이드인 처리
 document.addEventListener("DOMContentLoaded", () => {
-  const fadeElements = document.querySelectorAll(".fade-up");
+  const faders = document.querySelectorAll(".fadein");
 
-  const observer = new IntersectionObserver((entries) => {
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -10% 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
     });
-  }, {
-    threshold: 0.2
-  });
+  }, appearOptions);
 
-  fadeElements.forEach(el => observer.observe(el));
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
 });
