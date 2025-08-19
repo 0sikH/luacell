@@ -135,7 +135,6 @@ img {
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
 
-
 /* ---------- 모바일 (세로 2:1 / 위아래 구조) ---------- */
 @media (max-width: 768px) {
   html, body {
