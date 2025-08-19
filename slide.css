@@ -143,8 +143,9 @@ img {
 
   .slide-wrapper {
     width: 100vw;
-    height: calc(100vw * 0.5); /* 📌 2:1 비율: 세로 = 가로 * 0.5 */
+    height: calc(100vw * 0.5); /* 2:1 비율 유지 */
     overflow: hidden;
+    position: relative;
   }
 
   .slide {
@@ -156,20 +157,77 @@ img {
   .left, .right {
     width: 50%;
     height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
+
+  /* 왼쪽 텍스트 */
+  .left {
+    padding: 0 10px;
+  }
+
+  .left .label {
+    font-size: 3.8vw;         /* 전체 화면에 맞춰 상대 크기 조정 */
+    line-height: 1.2;
+    margin-bottom: 1vh;
+    color: #fff;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .left .best {
+    font-size: 2.6vw;
+    margin-bottom: 4px;
+    color: #ccc;
+  }
+
+  /* 오른쪽 텍스트 및 이미지 */
+  .right {
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .right h2 {
+    font-size: 3.8vw;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    opacity: 1;
+  }
+
+  .right p {
+    font-size: 3.2vw;
+    color: #444;
+    margin-bottom: 0.5rem;
+    opacity: 1;
   }
 
   .product {
-    max-height: 80%;
-    width: auto;
+    max-height: 60%;
+    max-width: 70%;
     height: auto;
-    margin: auto;
+    width: auto;
+    margin: 0.3rem auto;
+    transform: none;
+    opacity: 1;
+  }
+
+  .slide:nth-child(2) .product {
+    max-height: 52%;
   }
 
   .btn {
-    font-size: 12px;
-    padding: 8px 12px;
-    margin-top: 6px;
+    font-size: 3vw;
+    padding: 6px 12px;
+    border-radius: 14px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 0.4rem;
+    opacity: 1;
   }
-
-  /* 추가 요소들도 그대로 유지하되, 높이에 영향 주지 않도록 주의 */
 }
