@@ -1,9 +1,9 @@
-/* 전체 기본 세팅 */
+/* 기본 설정 */
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   overflow: hidden;
   font-family: 'Pretendard', sans-serif;
 }
@@ -14,11 +14,13 @@ img {
   display: block;
 }
 
-/* 슬라이드 래퍼 및 개별 슬라이드 */
+/* 슬라이드 래퍼 */
 .slide-wrapper {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .slide {
@@ -31,18 +33,19 @@ img {
   opacity: 0;
   transition: opacity 1s ease;
 }
+
 .slide.active {
   opacity: 1;
   z-index: 1;
 }
 
-/* 좌우 구성 영역 */
+/* 좌우 구성 영역 (기본 PC 버전) */
 .left, .right {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   box-sizing: border-box;
 }
@@ -51,6 +54,7 @@ img {
   padding: 0 60px;
   overflow: hidden;
 }
+
 .left .background {
   position: absolute;
   inset: 0;
@@ -58,6 +62,7 @@ img {
   background-position: center;
   z-index: 0;
 }
+
 .left .label {
   position: relative;
   color: #fff;
@@ -70,6 +75,7 @@ img {
   transform: translateY(40px);
   margin-bottom: 12vh;
 }
+
 .left .best {
   font-size: 16px;
   font-weight: 500;
@@ -78,7 +84,7 @@ img {
   text-transform: uppercase;
 }
 
-/* 오른쪽 배경과 텍스트 */
+/* 텍스트 영역 */
 .right {
   background-color: #f6f8fa;
   align-items: center;
@@ -87,12 +93,14 @@ img {
   transition: background-color 1s ease;
   padding: 20px;
 }
+
 .right h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   opacity: 0;
 }
+
 .right p {
   font-size: 1rem;
   color: #444;
@@ -107,6 +115,7 @@ img {
   transform: translateX(40px);
   opacity: 0;
 }
+
 .slide:nth-child(2) .product {
   height: auto;
   max-height: 250px;
@@ -125,109 +134,101 @@ img {
   transform: translateY(10px);
 }
 
-/* 배경색 지정 */
+/* 배경 색상별 */
 .right-bg1 .right { background-color: #9ea9bc; }
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
 
+
+
+
+
 /* --------- 모바일 설정 --------- */
 @media (max-width: 768px) {
   html, body {
+    overflow: hidden;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
   }
 
   .slide-wrapper {
     width: 100vw;
-    height: calc(100vw / 2); /* 2:1 비율 (가로:세로) */
+    height: calc(100vw * 0.5); /* 2:1 비율 */
+    min-height: auto !important;
     max-height: 100vh;
     overflow: hidden;
   }
 
   .slide {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column; /* 상하 구조 전환 */
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
 
   .left, .right {
-    width: 50%;
-    height: 100%;
-    max-height: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    max-height: 50%;
   }
 
   .left {
-    padding: 0 8px;
+    padding: 0;
     justify-content: flex-end;
-    align-items: flex-start;
   }
 
   .left .label {
-    font-size: clamp(14px, 4vw, 18px);
-    line-height: 1.2;
-    margin-bottom: 1vh;
+    font-size: clamp(14px, 4vw, 20px);
+    margin: 0 0 1vh 8px;
     opacity: 1;
     transform: translateY(0);
   }
 
   .left .best {
     font-size: 11px;
-    margin-bottom: 4px;
-    color: #ccc;
+    margin-bottom: 5px;
+    margin-left: 8px;
   }
 
   .right {
-    padding: 6px;
+    padding: 6px 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
   }
 
   .right h2 {
-    font-size: clamp(14px, 3.2vw, 16px);
-    font-weight: 700;
-    margin: 0 0 0.3rem;
+    font-size: clamp(14px, 3.5vw, 18px);
     opacity: 1;
+    margin-bottom: 0.4rem;
   }
 
   .right p {
-    font-size: clamp(11px, 2.8vw, 14px);
-    color: #555;
-    margin: 0 0 0.5rem;
+    font-size: clamp(12px, 3vw, 14px);
     opacity: 1;
+    margin-bottom: 0.4rem;
   }
 
   .product {
+    max-width: 60%;
     max-height: 50%;
-    max-width: 70%;
-    width: auto;
     height: auto !important;
+    width: auto;
     transform: none;
-    margin: 0.4rem auto 0.3rem;
     opacity: 1;
-  }
-
-  .slide:nth-child(2) .product {
-    max-height: 55%;
+    margin: 0.5rem auto;
   }
 
   .btn {
     padding: 6px 14px;
-    font-size: 12px;
-    border-radius: 16px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
+    font-size: 13px;
     opacity: 1;
-    margin-top: 0.2rem;
     transform: none;
+    margin-top: 0.4rem;
+  }
+
+  .slide:nth-child(2) .product {
+    max-height: 55%;
   }
 }
