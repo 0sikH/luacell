@@ -213,7 +213,7 @@ img {
 
   .slide:nth-child(2) .product {
     max-width: 68%;
-    max-height: 55%;
+    max-height: 45%;
     margin: 0.4rem auto 0.5rem;
   }
 
