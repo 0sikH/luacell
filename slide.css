@@ -1,8 +1,9 @@
+/* 전체 기본 세팅 */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   font-family: 'Pretendard', sans-serif;
 }
@@ -13,36 +14,42 @@ img {
   display: block;
 }
 
+/* 슬라이드 래퍼 및 개별 슬라이드 */
 .slide-wrapper {
   position: relative;
   width: 100vw;
-  height: 100dvh;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   opacity: 0;
   transition: opacity 1s ease;
 }
-.slide.active { opacity: 1; z-index: 1; }
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
 
+/* 좌우 구성 영역 */
 .left, .right {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
   box-sizing: border-box;
 }
 
 .left {
   padding: 0 60px;
   overflow: hidden;
-  position: relative;
 }
 .left .background {
   position: absolute;
@@ -71,13 +78,14 @@ img {
   text-transform: uppercase;
 }
 
+/* 오른쪽 배경과 텍스트 */
 .right {
   background-color: #f6f8fa;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
   transition: background-color 1s ease;
+  padding: 20px;
 }
 .right h2 {
   font-size: 2rem;
@@ -90,6 +98,8 @@ img {
   color: #444;
   opacity: 0;
 }
+
+/* 제품 이미지 */
 .product {
   height: 420px;
   width: auto;
@@ -101,6 +111,8 @@ img {
   height: auto;
   max-height: 250px;
 }
+
+/* 버튼 */
 .btn {
   display: inline-block;
   padding: 10px 24px;
@@ -113,11 +125,12 @@ img {
   transform: translateY(10px);
 }
 
+/* 배경색 지정 */
 .right-bg1 .right { background-color: #9ea9bc; }
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
 
-/* ---------- 모바일 (2:1 비율 유지) ---------- */
+/* --------- 모바일 설정 --------- */
 @media (max-width: 768px) {
   html, body {
     margin: 0;
@@ -126,9 +139,9 @@ img {
   }
 
   .slide-wrapper {
-    width: 100vw;
-    aspect-ratio: 2 / 1;
-    height: auto;
+    width: 100%;
+    aspect-ratio: 2 / 1;  /* ✅ 정확한 2:1 비율 유지 */
+    height: auto !important;
     overflow: hidden;
   }
 
@@ -152,8 +165,8 @@ img {
   .left .label {
     font-size: clamp(14px, 4vw, 20px);
     margin-bottom: 1vh;
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 
   .left .best {
@@ -163,31 +176,43 @@ img {
 
   .right {
     padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
-  .right h2, .right p {
-    font-size: clamp(12px, 3.5vw, 14px);
+  .right h2 {
+    font-size: clamp(14px, 3.5vw, 18px);
     opacity: 1;
-    margin: 0.2rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .right p {
+    font-size: clamp(12px, 3vw, 14px);
+    opacity: 1;
+    margin-bottom: 0.5rem;
   }
 
   .product {
     max-width: 70%;
-    height: auto;
-    max-height: 80%;
-    object-fit: contain;
-    margin: 0.5rem auto;
+    max-height: 55%;
+    height: auto !important;
+    width: auto;
+    transform: none;
     opacity: 1;
+    margin: 1rem auto 0.5rem;
   }
 
   .slide:nth-child(2) .product {
-    max-height: 65%;
+    max-height: 60%;
   }
 
   .btn {
-    margin-top: 0.5rem;
-    font-size: 12px;
     padding: 8px 12px;
+    font-size: 12px;
+    transform: none;
     opacity: 1;
+    margin-top: 0.5rem;
   }
 }
