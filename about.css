@@ -1,68 +1,85 @@
-/* about.css = 루아셀 ABOUT 페이지 전용 스타일 */
-
 body {
-  font-family: 'Pretendard', sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  background: #fff;
   color: #222;
-  background-color: #fff;
-  line-height: 1.6;
 }
 
-.about-section {
+section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-intro h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-intro p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-tech {
   display: flex;
+  gap: 24px;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  padding: 100px 5%;
-  max-width: 1280px;
-  margin: 0 auto;
   flex-wrap: wrap;
 }
 
-.about-text {
-  flex: 1;
-  min-width: 240px;
+.tech-card {
+  flex: 1 1 30%;
+  background: #f6f8fa;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
-.about-text h3 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.about-text h4 {
+.tech-card h3 {
   font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.about-text p {
-  font-size: 15px;
-  color: #444;
   margin-bottom: 8px;
 }
 
-.about-image {
-  flex: 1;
-  min-width: 240px;
-  text-align: right;
+.about-global h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
 }
 
-.about-image img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+.about-cta {
+  padding: 80px 20px;
+  background: #eaf0f4;
+}
+
+.about-cta h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 24px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #333;
 }
 
 @media (max-width: 768px) {
-  .about-section {
+  .about-tech {
     flex-direction: column;
-    text-align: center;
   }
-  .about-image img {
-    margin: 0 auto;
+
+  .tech-card {
+    flex: 1 1 100%;
   }
 }
