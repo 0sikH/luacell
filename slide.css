@@ -137,13 +137,13 @@ img {
   html, body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
   }
 
   .slide-wrapper {
     width: 100vw;
-    height: 100vh; /* 뷰포트에 꽉 차게 */
+    height: calc(100vw * 0.5); /* 📌 2:1 비율: 세로 = 가로 * 0.5 */
     overflow: hidden;
   }
 
@@ -156,64 +156,20 @@ img {
   .left, .right {
     width: 50%;
     height: 100%;
-    max-height: 100%;
-  }
-
-  .left {
-    padding: 0 8px;
-    justify-content: flex-end;
-  }
-
-  .left .label {
-    font-size: clamp(14px, 4vw, 20px);
-    margin-bottom: 1vh;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .left .best {
-    font-size: 11px;
-    margin-bottom: 5px;
-  }
-
-  .right {
-    padding: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .right h2 {
-    font-size: clamp(14px, 3.5vw, 18px);
-    opacity: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .right p {
-    font-size: clamp(12px, 3vw, 14px);
-    opacity: 1;
-    margin-bottom: 0.5rem;
   }
 
   .product {
-    max-width: 70%;
-    max-height: 40vh;
-    height: auto !important;
-    transform: none;
-    opacity: 1;
-    margin: 1rem auto 0.5rem;
-  }
-
-  .slide:nth-child(2) .product {
-    max-height: 35vh;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    margin: auto;
   }
 
   .btn {
-    padding: 8px 12px;
     font-size: 12px;
-    transform: none;
-    opacity: 1;
-    margin-top: 0.5rem;
+    padding: 8px 12px;
+    margin-top: 6px;
   }
+
+  /* 추가 요소들도 그대로 유지하되, 높이에 영향 주지 않도록 주의 */
 }
