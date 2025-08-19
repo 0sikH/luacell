@@ -31,6 +31,7 @@ body {
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .review-card {
@@ -84,7 +85,7 @@ body {
   padding-top: 0;
   border-top: none;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -126,4 +127,47 @@ body {
   color: #3366cc;
   font-weight: bold;
   margin-top: 4px;
+}
+
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .review-list {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+
+  .review-card img {
+    height: 220px;
+  }
+
+  .review-title {
+    font-size: 16px;
+  }
+
+  .review-content {
+    font-size: 13px;
+  }
+
+  .related-product {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .related-product img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cart-icon {
+    transform: scale(0.6);
+  }
 }
