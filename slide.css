@@ -1,4 +1,4 @@
-/* 전체 기본 세팅 */
+/* 기본 설정 */
 html, body {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ img {
   display: block;
 }
 
-/* 슬라이드 래퍼 및 개별 슬라이드 */
+/* 슬라이드 컨테이너 */
 .slide-wrapper {
   position: relative;
   width: 100vw;
@@ -22,6 +22,7 @@ img {
   min-height: 100vh;
 }
 
+/* 각 슬라이드 */
 .slide {
   position: absolute;
   top: 0;
@@ -37,7 +38,7 @@ img {
   z-index: 1;
 }
 
-/* 좌우 구성 영역 */
+/* 양쪽 구역 */
 .left, .right {
   width: 50%;
   height: 100%;
@@ -48,6 +49,7 @@ img {
   box-sizing: border-box;
 }
 
+/* 왼쪽 영역 (배경 + 텍스트) */
 .left {
   padding: 0 60px;
   overflow: hidden;
@@ -79,7 +81,7 @@ img {
   text-transform: uppercase;
 }
 
-/* 오른쪽 배경과 텍스트 */
+/* 오른쪽 영역 */
 .right {
   background-color: #f6f8fa;
   align-items: center;
@@ -126,12 +128,12 @@ img {
   transform: translateY(10px);
 }
 
-/* 배경색 지정 */
+/* 배경색 */
 .right-bg1 .right { background-color: #9ea9bc; }
 .right-bg2 .right { background-color: #eff0db; }
 .right-bg3 .right { background-color: #cbe3ed; }
 
-/* 모바일 설정 */
+/* --------- 모바일 설정 --------- */
 @media (max-width: 768px) {
   html, body {
     overflow: hidden;
@@ -141,7 +143,10 @@ img {
 
   .slide-wrapper {
     width: 100vw;
-    height: calc(100vw * 1.2); /* 2:1.5 비율 */
+    height: calc(100vw * 1.5); /* 2:1.5 비율 */
+    min-height: auto !important;
+    max-height: 100vh;
+    overflow: hidden;
   }
 
   .slide {
@@ -153,8 +158,9 @@ img {
   .left, .right {
     width: 50%;
     height: 100%;
+    max-height: 100%;
   }
-  
+
   .left {
     padding: 0 8px;
     justify-content: flex-end;
@@ -166,6 +172,7 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+
   .left .best {
     font-size: 11px;
     margin-bottom: 5px;
@@ -173,16 +180,22 @@ img {
 
   .right {
     padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   .right h2 {
     font-size: clamp(14px, 3.5vw, 18px);
     opacity: 1;
+    margin-bottom: 0.5rem;
   }
 
   .right p {
     font-size: clamp(12px, 3vw, 14px);
     opacity: 1;
+    margin-bottom: 0.5rem;
   }
 
   .product {
@@ -192,6 +205,7 @@ img {
     width: auto;
     transform: none;
     opacity: 1;
+    margin: 1rem auto 0.5rem;
   }
 
   .slide:nth-child(2) .product {
@@ -203,5 +217,6 @@ img {
     font-size: 12px;
     transform: none;
     opacity: 1;
+    margin-top: 0.5rem;
   }
 }
