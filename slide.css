@@ -139,13 +139,12 @@ img {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    height: 100vh; /* 추가 */
   }
 
   .slide-wrapper {
     width: 100vw;
-    height: calc(100vw * 1.5); /* 2:1.5 비율 */
-    min-height: auto !important;
-    max-height: 100vh;
+    height: 100vh; /* 정비율 맞춤 */
     overflow: hidden;
   }
 
