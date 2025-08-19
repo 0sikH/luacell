@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>루아셀 고객 리뷰</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="voice.css" />
+</head>
+<body>
+  <section class="review-section">
+    <div class="review-list">
+
+      <!-- 리뷰 카드 1 -->
+      <div class="review-card">
+        <img src="https://cdn.imweb.me/thumbnail/20250729/3bc49d262ddcd.jpeg" alt="루아셀 스파이크샷 앰플" />
+        <div class="review-meta">2025.07.21 · 추천 19 · 조회 2676</div>
+        <div class="review-title">피부가 확실히 매끈해졌어요</div>
+        <div class="review-author">이*진 · 지성</div>
+        <div class="review-content">니들샷 특유의 자극감은 있지만, 사용 후 모공 주변 피부가 정돈되고 매끈해지는 게 확실히 느껴져요. 각질 위에도 깔끔하게 흡수되어 효과 좋았습니다.</div>
+        <div class="stars">★★★★★</div>
+        <div class="related-product">
+          <img src="https://cdn.imweb.me/thumbnail/20250729/dd4fb009ac18b.jpg" alt="썸네일" />
+          <div class="info">
+            <div class="product-name">
+              루아셀 스파이크샷 앰플 40ml
+              <a href="https://genus0748655.imweb.me/accessories/?idx=179" target="_blank">
+                <img class="cart-icon" src="https://cdn.imweb.me/thumbnail/20250729/dffd64a2ac014.png" alt="장바구니 아이콘" />
+              </a>
+            </div>
+            <div class="price">49,000원</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 리뷰 카드 2 -->
+      <div class="review-card">
+        <img src="https://cdn.imweb.me/thumbnail/20250729/6f0a3e3d66a8f.jpg" alt="루아셀 선크림" />
+        <div class="review-meta">2025.06.29 · 추천 42 · 조회 5306 </div>
+        <div class="review-title">톤업이 자연스럽고 끈적임 없어요</div>
+        <div class="review-author">박*나 · 복합성</div>
+        <div class="review-content">미백 기능이 확실히 느껴졌고, 자연스럽게 톤 보정되면서 메이크업 베이스로도 아주 좋아요. 백탁 없고 가볍게 마무리돼서 만족도 높습니다.</div>
+        <div class="stars">★★★★★</div>
+        <div class="related-product">
+          <img src="https://cdn.imweb.me/thumbnail/20250729/61d08e5365f50.jpg" alt="썸네일" />
+          <div class="info">
+            <div class="product-name">
+              루아셀 일루미네이팅 화이트 레이블 썬크림 15ml
+              <a href="https://genus0748655.imweb.me/shop_view/?idx=173" target="_blank">
+                <img class="cart-icon" src="https://cdn.imweb.me/thumbnail/20250729/dffd64a2ac014.png" alt="장바구니 아이콘" />
+              </a>
+            </div>
+            <div class="price">20,000원</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 리뷰 카드 3 -->
+      <div class="review-card">
+        <img src="https://cdn.imweb.me/thumbnail/20250729/28378e85a1c57.jpeg" alt="루아셀 MF 엑소 크림" />
+        <div class="review-meta">2025.06.16 · 추천 24 · 조회 2641</div>
+        <div class="review-title">흡수력 최고, 피부결이 달라졌어요</div>
+        <div class="review-author">김*현 · 건성</div>
+        <div class="review-content">발림성이 정말 부드럽고, 끈적임 없이 흡수되어 피부에 편안하게 스며들어요. 몇 주 사용 후 확실히 결이 부드러워지고 윤기 있어졌습니다.</div>
+        <div class="stars">★★★★★</div>
+        <div class="related-product">
+          <img src="https://cdn.imweb.me/thumbnail/20250729/13e69442c3288.jpg" alt="썸네일" />
+          <div class="info">
+            <div class="product-name">
+              루아셀 엠에프 엑소 크림 50ml
+              <a href="https://genus0748655.imweb.me/shop_view/?idx=174" target="_blank">
+                <img class="cart-icon" src="https://cdn.imweb.me/thumbnail/20250729/dffd64a2ac014.png" alt="장바구니 아이콘" />
+              </a>
+            </div>
+            <div class="price">42,000원</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
