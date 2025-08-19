@@ -141,7 +141,7 @@ img {
 
   .slide-wrapper {
     width: 100vw;
-    height: calc(100vw * 1.5); /* 2:1.5 비율 */
+    height: calc(100vw * 1.2); /* 2:1.5 비율 */
   }
 
   .slide {
@@ -162,7 +162,7 @@ img {
 
   .left .label {
     font-size: clamp(14px, 4vw, 20px);
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     opacity: 1;
     transform: translateY(0);
   }
@@ -172,7 +172,7 @@ img {
   }
 
   .right {
-    padding: 8px;
+    padding: 6px;
   }
 
   .right h2 {
