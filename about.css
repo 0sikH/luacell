@@ -97,10 +97,12 @@ section {
 
 .global-text {
   position: absolute;
-  bottom: 24px;
-  left: 40px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .global-text h2 {
