@@ -25,6 +25,7 @@ section {
   color: #666;
 }
 
+/* 기술 카드 영역 */
 .about-tech {
   background-color: #f9fafa;
   padding-top: 60px;
@@ -43,7 +44,7 @@ section {
   background: #fff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -54,6 +55,8 @@ section {
 
 .tech-item img {
   width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 16px;
 }
@@ -70,6 +73,7 @@ section {
   color: #555;
 }
 
+/* 글로벌 영역 */
 .about-global {
   padding: 0;
   background-color: #fff;
@@ -96,7 +100,7 @@ section {
   bottom: 24px;
   left: 40px;
   color: #fff;
-  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .global-text h2 {
@@ -110,6 +114,7 @@ section {
   line-height: 1.4;
 }
 
+/* CTA 섹션 */
 .about-cta {
   text-align: center;
   padding: 80px 20px;
