@@ -1,21 +1,15 @@
-// Scroll 모션용 페이드인 처리
+// fade-in 애니메이션
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll(".fadein");
 
-  const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -10% 0px"
-  };
-
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      }
     });
-  }, appearOptions);
+  }, { threshold: 0.2 });
 
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
+  faders.forEach(el => observer.observe(el));
 });
