@@ -1,12 +1,15 @@
 body {
   margin: 0;
   font-family: 'Pretendard', sans-serif;
-  color: #222;
   background-color: #fff;
+  color: #111;
 }
 
 section {
-  padding: 80px 20px;
+  padding: 80px 5%;
+}
+
+.about-intro {
   text-align: center;
 }
 
@@ -18,103 +21,118 @@ section {
 }
 
 .about-intro p {
-  font-size: 15px;
+  font-size: 16px;
   color: #666;
-  line-height: 1.6;
 }
 
-/* 기술 영역 */
 .about-tech {
+  background-color: #f9fafa;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.tech-grid {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 40px;
-  background: #f8f9fa;
+  flex-wrap: wrap;
 }
 
-.tech-card {
-  max-width: 300px;
-  flex: 1 1 280px;
+.tech-item {
+  width: 280px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.tech-card img {
+.tech-item:hover {
+  transform: translateY(-6px);
+}
+
+.tech-item img {
   width: 100%;
-  height: auto;
   border-radius: 12px;
   margin-bottom: 16px;
-  object-fit: cover;
 }
 
-.tech-card h3 {
+.tech-item h3 {
   font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.tech-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* 글로벌 영역 */
-.about-global img {
-  width: 100%;
-  max-width: 720px;
-  height: auto;
-  border-radius: 14px;
-  margin-bottom: 24px;
-  object-fit: cover;
-}
-
-.about-global h2 {
-  font-size: 20px;
   font-weight: 700;
+  margin: 12px 0 6px;
+  color: #111;
+}
+
+.tech-item p {
+  font-size: 13px;
+  color: #555;
+}
+
+.about-global {
+  padding: 0;
+  background-color: #fff;
+}
+
+.global-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.global-img-wrap img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+.global-text {
+  position: absolute;
+  bottom: 24px;
+  left: 40px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.global-text h2 {
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
-.about-global p {
+.global-text p {
   font-size: 14px;
-  color: #555;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
-/* CTA 영역 */
 .about-cta {
-  background: #000;
-  color: #fff;
-  padding: 100px 20px;
+  text-align: center;
+  padding: 80px 20px;
 }
 
 .about-cta h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.4;
   margin-bottom: 24px;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 28px;
-  background: #fff;
-  color: #000;
-  font-size: 14px;
+  padding: 12px 32px;
+  background: #111;
+  color: #fff;
   border-radius: 24px;
+  font-size: 14px;
   text-decoration: none;
-  font-weight: 500;
   transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background: #eee;
-}
-
-/* fadein 효과 */
-.fadein {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.fadein.active {
-  opacity: 1;
-  transform: none;
+  background: #333;
 }
